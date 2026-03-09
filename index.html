@@ -6,6 +6,18 @@
   <title>ReadyNest Safety Training | CPR, First Aid & Safety Training for Childcare Centers</title>
   <meta name="description" content="CPR certification, continuing education, and emergency preparedness training built specifically for childcare centers in Katy and West Houston. AHA certified. Texas-compliant. On-site at your facility.">
 
+  <!-- Open Graph / Social Share -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ReadyNest Safety Training">
+  <meta property="og:description" content="CPR, First Aid & Safety Training Built Specifically for Childcare Centers. AHA certified. Texas-compliant. Katy & West Houston.">
+  <meta property="og:image" content="https://readynest-safety.vercel.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ReadyNest Safety Training">
+  <meta name="twitter:description" content="CPR, First Aid & Safety Training Built Specifically for Childcare Centers.">
+  <meta name="twitter:image" content="https://readynest-safety.vercel.app/assets/og-image.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1204,6 +1216,9 @@
       .btn-submit { padding: 14px 40px; min-height: 44px; }
       .area-tag { padding: 12px 16px; font-size: 0.8rem; min-height: 44px; }
       .nav-links a { padding: 8px 0; min-height: 44px; display: flex; align-items: center; }
+      /* Disable nav active highlight in mobile menu -- looks like a stuck selection */
+      .nav-links a.active { color: inherit; opacity: 0.7; }
+      .nav-links a.active::after { width: 0; }
 
       /* Trust bar -- readable font, tighter layout */
       .trust-bar-inner { gap: 12px; justify-content: center; }
