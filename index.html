@@ -528,12 +528,13 @@
       padding: 10px 14px;
       text-align: left;
     }
-    .course-table th:last-child { text-align: center; }
+    .course-table th:nth-child(2), .course-table th:last-child { text-align: center; }
     .course-table td {
       padding: 10px 14px;
       border-bottom: 1px solid var(--light-gray);
       color: var(--text);
     }
+    .course-table td:nth-child(2) { text-align: center; color: var(--gray); font-size: 0.8rem; }
     .course-table td:last-child { text-align: center; font-weight: 500; }
     .course-table tr:nth-child(even) { background: rgba(43, 87, 151, 0.03); }
 
@@ -1417,18 +1418,22 @@
           <p>Continuing education courses designed to help your team meet Texas childcare licensing requirements. We bring the training to your facility so you do not have to shut down or scramble for coverage.</p>
           <table class="course-table">
             <thead>
-              <tr><th>Course</th><th>Price</th></tr>
+              <tr><th>Course</th><th>Hours</th><th>Price</th></tr>
             </thead>
             <tbody>
-              <tr><td>Emergency Response for Childcare Staff</td><td>$150</td></tr>
-              <tr><td>Illness and Injury Prevention in Childcare Settings</td><td>$150</td></tr>
-              <tr><td>Supervision and Active Monitoring</td><td>$150</td></tr>
-              <tr><td>Fire Safety and Evacuation Procedures</td><td>$150</td></tr>
-              <tr><td>Severe Weather Preparedness</td><td>$150</td></tr>
-              <tr><td>Emergency Reunification Planning</td><td>$150</td></tr>
+              <tr><td>Emergency Preparedness for Child Care Programs</td><td>2 hrs</td><td>$200</td></tr>
+              <tr><td>Preventing the Spread of Communicable Disease</td><td>2 hrs</td><td>$200</td></tr>
+              <tr><td>Safe Medication Administration in Child Care</td><td>2 hrs</td><td>$200</td></tr>
+              <tr><td>Food Allergies, Anaphylaxis, and Emergency Response</td><td>2 hrs</td><td>$200</td></tr>
+              <tr><td>Building, Playground, and Physical Premises Safety</td><td>2 hrs</td><td>$200</td></tr>
+              <tr><td>Hazardous Materials and Chemical Safety</td><td>2 hrs</td><td>$200</td></tr>
+              <tr><td>Pediatric Injury Prevention and First Response</td><td>2 hrs</td><td>$200</td></tr>
+              <tr><td>Safe Sleep, SIDS Reduction, and Infant Room Risk</td><td>2 hrs</td><td>$200</td></tr>
+              <tr><td>Recognizing and Preventing Abusive Head Trauma</td><td>1 hr</td><td>$150</td></tr>
+              <tr><td>Transportation Safety for Child Care Programs</td><td>2 hrs</td><td>$200</td></tr>
             </tbody>
           </table>
-          <p class="pricing-note">Pricing is per course, not per student.</p>
+          <p class="pricing-note">Pricing is per course, not per student. These courses are coming soon.</p>
         </div>
 
         <!-- Emergency Prep Card -->
@@ -1467,29 +1472,6 @@
     <img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1260" alt="Teacher reading to preschool children in a colorful classroom" loading="lazy">
   </div>
 
-  <!-- Coming Soon -->
-  <section class="section coming-soon" id="coming-soon">
-    <div class="section-inner">
-      <p class="section-label" data-aos="fade-up">Expanding Our Catalog</p>
-      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Coming Soon: Additional CE Courses</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We are expanding our continuing education catalog with specialized courses for childcare providers. These courses are currently in development and expected to launch mid-2026.</p>
-
-      <div class="coming-soon-grid">
-        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="100"><i data-lucide="clock"></i> Emergency Preparedness for Child Care Programs <span class="duration">2 hrs</span></div>
-        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="120"><i data-lucide="clock"></i> Preventing the Spread of Communicable Disease <span class="duration">2 hrs</span></div>
-        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="140"><i data-lucide="clock"></i> Safe Medication Administration in Child Care <span class="duration">2 hrs</span></div>
-        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="160"><i data-lucide="clock"></i> Food Allergies, Anaphylaxis, and Emergency Response <span class="duration">2 hrs</span></div>
-        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="180"><i data-lucide="clock"></i> Building, Playground, and Physical Premises Safety <span class="duration">2 hrs</span></div>
-        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="200"><i data-lucide="clock"></i> Hazardous Materials and Chemical Safety <span class="duration">2 hrs</span></div>
-        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="220"><i data-lucide="clock"></i> Pediatric Injury Prevention and First Response <span class="duration">2 hrs</span></div>
-        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="240"><i data-lucide="clock"></i> Safe Sleep, SIDS Reduction, and Infant Room Risk <span class="duration">2 hrs</span></div>
-        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="260"><i data-lucide="clock"></i> Recognizing and Preventing Abusive Head Trauma <span class="duration">1 hr</span></div>
-        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="280"><i data-lucide="clock"></i> Transportation Safety for Child Care Programs <span class="duration">2 hrs</span></div>
-      </div>
-
-      <p class="coming-soon-note" data-aos="fade-up">Interested in a specific course? Contact us and we will notify you when it becomes available.</p>
-    </div>
-  </section>
 
   <!-- Why ReadyNest -->
   <section class="section why-section" id="why">
