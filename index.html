@@ -282,7 +282,8 @@
       z-index: 3;
       animation: scrollBounce 2s ease-in-out infinite;
     }
-    .scroll-hint i { width: 28px; height: 28px; color: var(--gold); }
+    .scroll-hint { color: var(--gold); }
+    .scroll-hint i, .scroll-hint svg { width: 28px; height: 28px; }
     @keyframes scrollBounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(8px); }
