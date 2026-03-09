@@ -121,7 +121,7 @@
       align-items: center;
       gap: 8px;
     }
-    .nav-logo i { width: 28px; height: 28px; color: var(--red); }
+    .nav-logo i, .nav-logo svg { width: 28px; height: 28px; color: var(--red); }
     .nav-links {
       display: flex;
       align-items: center;
@@ -166,7 +166,7 @@
       transition: var(--transition);
     }
     .nav-phone:hover { opacity: 1; }
-    .nav-phone i { width: 18px; height: 18px; }
+    .nav-phone i, .nav-phone svg { width: 18px; height: 18px; }
     .btn {
       font-family: var(--font-display);
       font-weight: 600;
@@ -207,7 +207,7 @@
       cursor: pointer;
       padding: 8px;
     }
-    .nav-toggle i { width: 24px; height: 24px; color: var(--text); }
+    .nav-toggle i, .nav-toggle svg { width: 24px; height: 24px; color: var(--text); }
 
     /* ===== HERO ===== */
     .hero {
@@ -285,7 +285,7 @@
       gap: 6px;
     }
     .hero-scroll-link:hover { color: var(--white); }
-    .hero-scroll-link i { width: 16px; height: 16px; }
+    .hero-scroll-link i, .hero-scroll-link svg { width: 16px; height: 16px; }
 
     /* Scroll hint chevron */
     .scroll-hint {
@@ -328,12 +328,12 @@
       color: rgba(255,255,255,0.9);
       letter-spacing: 0.01em;
     }
-    .trust-item i {
+    .trust-item i, .trust-item svg {
       width: 20px;
       height: 20px;
       color: var(--gold);
     }
-    .trust-item:first-child i { color: var(--red); }
+    .trust-item:first-child i, .trust-item:first-child svg { color: var(--red); }
 
     /* ===== SECTIONS BASE ===== */
     .section {
@@ -420,13 +420,13 @@
       justify-content: center;
       margin-bottom: 20px;
     }
-    .service-card-icon i { width: 24px; height: 24px; }
+    .service-card-icon i, .service-card-icon svg { width: 24px; height: 24px; }
     .service-card-icon.blue { background: rgba(43, 87, 151, 0.1); }
-    .service-card-icon.blue i { color: var(--accent); }
+    .service-card-icon.blue i, .service-card-icon.blue svg { color: var(--accent); }
     .service-card-icon.red { background: rgba(230, 57, 70, 0.1); }
-    .service-card-icon.red i { color: var(--red); }
+    .service-card-icon.red i, .service-card-icon.red svg { color: var(--red); }
     .service-card-icon.gold { background: rgba(212, 168, 75, 0.1); }
-    .service-card-icon.gold i { color: var(--gold); }
+    .service-card-icon.gold i, .service-card-icon.gold svg { color: var(--gold); }
     .service-card h3 {
       font-family: var(--font-display);
       font-weight: 700;
@@ -486,7 +486,7 @@
       gap: 12px;
       align-items: flex-start;
     }
-    .compliance-callout i {
+    .compliance-callout i, .compliance-callout svg {
       width: 20px;
       height: 20px;
       color: var(--gold);
@@ -644,9 +644,12 @@
     .coming-soon-item:hover {
       background: rgba(43, 87, 151, 0.06);
     }
-    .coming-soon-item i {
+    .coming-soon-item i,
+    .coming-soon-item svg {
       width: 18px;
       height: 18px;
+      min-width: 18px;
+      min-height: 18px;
       color: var(--accent);
       flex-shrink: 0;
       opacity: 0.6;
@@ -694,7 +697,7 @@
       justify-content: center;
       margin-bottom: 16px;
     }
-    .why-card-icon i { width: 22px; height: 22px; color: var(--accent); }
+    .why-card-icon i, .why-card-icon svg { width: 22px; height: 22px; color: var(--accent); }
     .why-card h3 {
       font-family: var(--font-display);
       font-weight: 700;
@@ -787,7 +790,7 @@
       border-color: rgba(255,255,255,0.5);
       background: rgba(255,255,255,0.18);
     }
-    .area-tag i { width: 16px; height: 16px; color: var(--gold); }
+    .area-tag i, .area-tag svg { width: 16px; height: 16px; color: var(--gold); }
 
     /* ===== CONTACT / VANTA ===== */
     .contact {
@@ -914,7 +917,7 @@
       gap: 6px;
     }
     .contact-alt-links a:hover { color: var(--white); }
-    .contact-alt-links a i { width: 16px; height: 16px; }
+    .contact-alt-links a i, .contact-alt-links a svg { width: 16px; height: 16px; }
     .contact-alt-links .sep {
       color: rgba(255,255,255,0.25);
       font-size: 0.8rem;
@@ -964,7 +967,7 @@
       transition: var(--transition);
     }
     .footer-contact-info a:hover { color: var(--white); }
-    .footer-contact-info a i { width: 16px; height: 16px; }
+    .footer-contact-info a i, .footer-contact-info a svg { width: 16px; height: 16px; }
     .footer-trust {
       display: flex;
       gap: 24px;
@@ -977,9 +980,9 @@
       font-size: 0.8rem;
       color: rgba(255,255,255,0.5);
     }
-    .footer-trust-item i { width: 16px; height: 16px; }
-    .footer-trust-item:first-child i { color: var(--red); }
-    .footer-trust-item:last-child i { color: var(--gold); }
+    .footer-trust-item i, .footer-trust-item svg { width: 16px; height: 16px; }
+    .footer-trust-item:first-child i, .footer-trust-item:first-child svg { color: var(--red); }
+    .footer-trust-item:last-child i, .footer-trust-item:last-child svg { color: var(--gold); }
     .footer-divider {
       border: none;
       border-top: 1px solid rgba(255,255,255,0.1);
@@ -1089,7 +1092,7 @@
       justify-content: center;
       margin: 0 auto 20px;
     }
-    .form-success-icon i { width: 32px; height: 32px; color: var(--gold); }
+    .form-success-icon i, .form-success-icon svg { width: 32px; height: 32px; color: var(--gold); }
     .form-success h3 {
       font-family: var(--font-display);
       font-weight: 700;
@@ -1157,17 +1160,17 @@
       background: var(--accent-hover);
       transform: translateY(-2px);
     }
-    .back-to-top i { width: 20px; height: 20px; }
+    .back-to-top i, .back-to-top svg { width: 20px; height: 20px; }
 
     /* ===== WHY CARD ICON VARIANTS ===== */
     .why-card-icon.icon-red {
       background: rgba(230, 57, 70, 0.08);
     }
-    .why-card-icon.icon-red i { color: var(--red); }
+    .why-card-icon.icon-red i, .why-card-icon.icon-red svg { color: var(--red); }
     .why-card-icon.icon-gold {
       background: rgba(212, 168, 75, 0.1);
     }
-    .why-card-icon.icon-gold i { color: var(--gold); }
+    .why-card-icon.icon-gold i, .why-card-icon.icon-gold svg { color: var(--gold); }
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
@@ -1223,7 +1226,7 @@
       /* Trust bar -- readable font, tighter layout */
       .trust-bar-inner { gap: 12px; justify-content: center; }
       .trust-item { font-size: 0.8rem; gap: 6px; }
-      .trust-item i { width: 16px; height: 16px; }
+      .trust-item i, .trust-item svg { width: 16px; height: 16px; }
 
       /* Sections */
       .section { padding: 64px 20px; }
