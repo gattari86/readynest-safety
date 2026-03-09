@@ -510,33 +510,85 @@
       margin-top: 8px;
     }
 
-    /* Course table */
-    .course-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 16px;
-      font-size: 0.875rem;
-    }
-    .course-table th {
-      background: var(--accent);
-      color: var(--white);
+    /* Coming Soon badge */
+    .card-badge {
+      position: absolute;
+      top: 16px;
+      right: -32px;
+      background: var(--gold);
+      color: var(--navy);
       font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.8rem;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 10px 14px;
-      text-align: left;
+      padding: 6px 40px;
+      transform: rotate(45deg);
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
-    .course-table th:nth-child(2), .course-table th:last-child { text-align: center; }
-    .course-table td {
-      padding: 10px 14px;
+
+    /* CE course list */
+    .ce-course-list {
+      margin-top: 16px;
+      list-style: none;
+      padding: 0;
+    }
+    .ce-course-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
       border-bottom: 1px solid var(--light-gray);
+      font-size: 0.85rem;
       color: var(--text);
     }
-    .course-table td:nth-child(2) { text-align: center; color: var(--gray); font-size: 0.8rem; }
-    .course-table td:last-child { text-align: center; font-weight: 500; }
-    .course-table tr:nth-child(even) { background: rgba(43, 87, 151, 0.03); }
+    .ce-course-list li:last-child { border-bottom: none; }
+    .ce-course-name { flex: 1; padding-right: 12px; }
+    .ce-course-duration {
+      color: var(--gray);
+      font-size: 0.78rem;
+      white-space: nowrap;
+      min-width: 40px;
+      text-align: center;
+    }
+    .ce-course-list .ce-hidden { display: none; }
+    .ce-course-list.expanded .ce-hidden { display: flex; }
+    .ce-toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      margin-top: 12px;
+      padding: 10px;
+      background: rgba(43, 87, 151, 0.06);
+      border: 1px dashed rgba(43, 87, 151, 0.2);
+      border-radius: 8px;
+      color: var(--accent);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .ce-toggle-btn:hover { background: rgba(43, 87, 151, 0.1); }
+    .ce-toggle-btn i, .ce-toggle-btn svg { width: 16px; height: 16px; transition: transform 0.3s; }
+    .ce-course-list.expanded + .ce-toggle-btn i,
+    .ce-course-list.expanded + .ce-toggle-btn svg { transform: rotate(180deg); }
+    .ce-pricing-summary {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: rgba(212, 168, 75, 0.08);
+      border-radius: 8px;
+      border-left: 3px solid var(--gold);
+      font-size: 0.82rem;
+      color: var(--text);
+    }
+    .ce-pricing-summary strong { color: var(--navy); }
+    .ce-pricing-summary .sep { color: var(--light-gray); }
 
     /* Prep consulting inline */
     .prep-services {
@@ -618,55 +670,6 @@
         rgba(43, 87, 151, 0.2) 50%,
         rgba(26, 61, 109, 0.3) 100%
       );
-    }
-
-    /* ===== COMING SOON ===== */
-    .coming-soon {
-      background: var(--white);
-    }
-    .coming-soon-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 32px;
-      margin-bottom: 24px;
-    }
-    .coming-soon-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 18px;
-      background: var(--bg);
-      border-radius: var(--radius-sm);
-      font-size: 0.875rem;
-      color: var(--text);
-      transition: var(--transition);
-    }
-    .coming-soon-item:hover {
-      background: rgba(43, 87, 151, 0.06);
-    }
-    .coming-soon-item i,
-    .coming-soon-item svg {
-      width: 18px;
-      height: 18px;
-      min-width: 18px;
-      min-height: 18px;
-      color: var(--accent);
-      flex-shrink: 0;
-      opacity: 0.6;
-    }
-    .coming-soon-item .duration {
-      margin-left: auto;
-      font-size: 0.75rem;
-      color: var(--gray);
-      font-weight: 500;
-      flex-shrink: 0;
-    }
-    .coming-soon-note {
-      font-size: 0.95rem;
-      color: var(--text);
-      font-style: italic;
-      opacity: 0.7;
     }
 
     /* ===== WHY READYNEST ===== */
@@ -1237,14 +1240,11 @@
       .service-card { padding: 28px 20px; }
       .compliance-callout { flex-wrap: wrap; }
 
-      /* Course table -- prevent overflow */
-      .course-table { font-size: 0.8rem; }
-      .course-table th { padding: 8px 10px; font-size: 0.7rem; }
-      .course-table td { padding: 8px 10px; }
-
-      /* Coming soon */
-      .coming-soon-grid { grid-template-columns: 1fr; }
-      .coming-soon-item { font-size: 0.82rem; padding: 12px 14px; }
+      /* CE course list mobile */
+      .ce-course-list li { font-size: 0.8rem; padding: 9px 0; }
+      .ce-pricing-summary { flex-direction: column; gap: 4px; font-size: 0.8rem; }
+      .ce-pricing-summary .sep { display: none; }
+      .card-badge { top: 12px; right: -36px; font-size: 0.6rem; padding: 5px 40px; }
 
       /* Why cards */
       .why-grid { grid-template-columns: 1fr; }
@@ -1413,27 +1413,29 @@
 
         <!-- CE Courses Card -->
         <div class="service-card card-red" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-badge">Coming Soon</div>
           <div class="service-card-icon red"><i data-lucide="book-open"></i></div>
           <h3>Childcare Licensing & Safety Training</h3>
           <p>Continuing education courses designed to help your team meet Texas childcare licensing requirements. We bring the training to your facility so you do not have to shut down or scramble for coverage.</p>
-          <table class="course-table">
-            <thead>
-              <tr><th>Course</th><th>Hours</th><th>Price</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Emergency Preparedness for Child Care Programs</td><td>2 hrs</td><td>$200</td></tr>
-              <tr><td>Preventing the Spread of Communicable Disease</td><td>2 hrs</td><td>$200</td></tr>
-              <tr><td>Safe Medication Administration in Child Care</td><td>2 hrs</td><td>$200</td></tr>
-              <tr><td>Food Allergies, Anaphylaxis, and Emergency Response</td><td>2 hrs</td><td>$200</td></tr>
-              <tr><td>Building, Playground, and Physical Premises Safety</td><td>2 hrs</td><td>$200</td></tr>
-              <tr><td>Hazardous Materials and Chemical Safety</td><td>2 hrs</td><td>$200</td></tr>
-              <tr><td>Pediatric Injury Prevention and First Response</td><td>2 hrs</td><td>$200</td></tr>
-              <tr><td>Safe Sleep, SIDS Reduction, and Infant Room Risk</td><td>2 hrs</td><td>$200</td></tr>
-              <tr><td>Recognizing and Preventing Abusive Head Trauma</td><td>1 hr</td><td>$150</td></tr>
-              <tr><td>Transportation Safety for Child Care Programs</td><td>2 hrs</td><td>$200</td></tr>
-            </tbody>
-          </table>
-          <p class="pricing-note">Pricing is per course, not per student. These courses are coming soon.</p>
+          <ul class="ce-course-list" id="ceList">
+            <li><span class="ce-course-name">Emergency Preparedness for Child Care Programs</span><span class="ce-course-duration">2 hrs</span></li>
+            <li><span class="ce-course-name">Preventing the Spread of Communicable Disease</span><span class="ce-course-duration">2 hrs</span></li>
+            <li><span class="ce-course-name">Safe Medication Administration in Child Care</span><span class="ce-course-duration">2 hrs</span></li>
+            <li class="ce-hidden"><span class="ce-course-name">Food Allergies, Anaphylaxis, and Emergency Response</span><span class="ce-course-duration">2 hrs</span></li>
+            <li class="ce-hidden"><span class="ce-course-name">Building, Playground, and Physical Premises Safety</span><span class="ce-course-duration">2 hrs</span></li>
+            <li class="ce-hidden"><span class="ce-course-name">Hazardous Materials and Chemical Safety</span><span class="ce-course-duration">2 hrs</span></li>
+            <li class="ce-hidden"><span class="ce-course-name">Pediatric Injury Prevention and First Response</span><span class="ce-course-duration">2 hrs</span></li>
+            <li class="ce-hidden"><span class="ce-course-name">Safe Sleep, SIDS Reduction, and Infant Room Risk</span><span class="ce-course-duration">2 hrs</span></li>
+            <li class="ce-hidden"><span class="ce-course-name">Recognizing and Preventing Abusive Head Trauma</span><span class="ce-course-duration">1 hr</span></li>
+            <li class="ce-hidden"><span class="ce-course-name">Transportation Safety for Child Care Programs</span><span class="ce-course-duration">2 hrs</span></li>
+          </ul>
+          <button class="ce-toggle-btn" id="ceToggle"><i data-lucide="chevron-down"></i> View All 10 Courses</button>
+          <div class="ce-pricing-summary">
+            <span><strong>$150</strong> per 1-hour course</span>
+            <span class="sep">|</span>
+            <span><strong>$200</strong> per 2-hour course</span>
+          </div>
+          <p class="pricing-note">Pricing is per course, not per student.</p>
         </div>
 
         <!-- Emergency Prep Card -->
@@ -1826,7 +1828,7 @@
         }
         animateRing();
 
-        document.querySelectorAll('a, button, .service-card, .why-card, .coming-soon-item').forEach(el => {
+        document.querySelectorAll('a, button, .service-card, .why-card').forEach(el => {
           el.addEventListener('mouseenter', () => ring.classList.add('hover'));
           el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
         });
@@ -1882,6 +1884,22 @@
               }
             }
           });
+        });
+      }
+
+      // ===== CE Course List Toggle =====
+      const ceToggle = document.getElementById('ceToggle');
+      const ceList = document.getElementById('ceList');
+      if (ceToggle && ceList) {
+        ceToggle.addEventListener('click', () => {
+          const expanded = ceList.classList.toggle('expanded');
+          const icon = ceToggle.querySelector('i, svg');
+          if (icon) {
+            icon.setAttribute('data-lucide', expanded ? 'chevron-up' : 'chevron-down');
+            lucide.createIcons();
+          }
+          ceToggle.childNodes[ceToggle.childNodes.length - 1].textContent =
+            expanded ? ' Show Fewer Courses' : ' View All 10 Courses';
         });
       }
 
