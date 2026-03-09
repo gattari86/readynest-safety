@@ -136,6 +136,8 @@
       transition: var(--transition);
     }
     .nav-links a:hover::after { width: 100%; }
+    /* Hide menu CTA on desktop (nav-actions handles it there) */
+    .nav-menu-cta { display: none; }
     .nav-actions {
       display: flex;
       align-items: center;
@@ -1157,10 +1159,22 @@
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
-      /* Nav -- hide CTA button on mobile (hero CTA handles it) */
+      /* Nav -- hide inline CTA on mobile, show CTA in hamburger menu instead */
       .nav-links { display: none; }
       .nav-actions { display: none; }
       .nav-toggle { display: block; }
+      .nav-menu-cta {
+        display: block !important;
+        margin-top: 8px;
+        text-align: center;
+        background: var(--red) !important;
+        color: var(--white) !important;
+        border-radius: var(--radius) !important;
+        padding: 14px 32px !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+      }
+      .nav-menu-cta::after { display: none !important; }
       .nav-links.active {
         display: flex;
         flex-direction: column;
@@ -1168,12 +1182,12 @@
         top: 72px;
         left: 0;
         right: 0;
-        background: rgba(245, 245, 240, 0.98);
-        backdrop-filter: blur(20px);
-        padding: 24px;
+        background: var(--bg);
+        backdrop-filter: none;
+        padding: 24px 24px 64px;
         gap: 20px;
-        border-bottom: 1px solid var(--light-gray);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        border-bottom: none;
+        box-shadow: 0 12px 32px rgba(0,0,0,0.15);
       }
 
       /* Hero -- declutter on mobile */
@@ -1300,6 +1314,7 @@
         <a href="#about">About</a>
         <a href="#area">Service Area</a>
         <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary nav-menu-cta">Schedule Training</a>
       </div>
       <div class="nav-actions">
         <a href="tel:" class="nav-phone" id="navPhone" style="display:none;">
@@ -1715,22 +1730,22 @@
       const navLinks = document.getElementById('navLinks');
       navToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        const icon = navToggle.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-          icon.setAttribute('data-lucide', 'x');
-        } else {
-          icon.setAttribute('data-lucide', 'menu');
+        const icon = navToggle.querySelector('i, svg');
+        if (icon) {
+          icon.setAttribute('data-lucide', navLinks.classList.contains('active') ? 'x' : 'menu');
+          lucide.createIcons();
         }
-        lucide.createIcons();
       });
 
       // Close mobile nav on link click
       navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           navLinks.classList.remove('active');
-          const icon = navToggle.querySelector('i');
-          icon.setAttribute('data-lucide', 'menu');
-          lucide.createIcons();
+          const icon = navToggle.querySelector('i, svg');
+          if (icon) {
+            icon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+          }
         });
       });
 
