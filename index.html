@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReadyNest Safety Training | CPR, First Aid & Safety Training for Childcare Centers</title>
+  <meta name="description" content="CPR certification, continuing education, and emergency preparedness training built specifically for childcare centers in Katy and West Houston. AHA certified. Texas-compliant. On-site at your facility.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --bg: #F5F5F0;
+      --text: #2C2C2C;
+      --accent: #2B5797;
+      --accent-hover: #1A3D6D;
+      --navy: #1A3D6D;
+      --red: #E63946;
+      --gold: #D4A84B;
+      --gray: #888888;
+      --light-gray: #E8E8E4;
+      --white: #FFFFFF;
+      --card-bg: #FFFFFF;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 40px rgba(0,0,0,0.12);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --font-display: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== FILM GRAIN ===== */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ===== SCROLL PROGRESS BAR ===== */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--red);
+      z-index: 10001;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10000;
+      background: rgba(245, 245, 240, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: var(--transition);
+    }
+    .nav.scrolled {
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-logo i { width: 28px; height: 28px; color: var(--red); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      opacity: 0.7;
+      transition: var(--transition);
+      position: relative;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--accent);
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+    .nav-phone:hover { opacity: 1; }
+    .nav-phone i { width: 18px; height: 18px; }
+    .btn {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 10px 24px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: #C62D39;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(230, 57, 70, 0.35);
+    }
+    .btn-large {
+      font-size: 1rem;
+      padding: 14px 36px;
+    }
+    .btn-hero {
+      font-size: 1.05rem;
+      padding: 16px 40px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle i { width: 24px; height: 24px; color: var(--text); }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(26, 61, 109, 0.75) 0%,
+        rgba(43, 87, 151, 0.65) 50%,
+        rgba(26, 61, 109, 0.8) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 860px;
+      padding: 120px 24px 80px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .hero-body {
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-scroll-link {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-scroll-link:hover { color: var(--white); }
+    .hero-scroll-link i { width: 16px; height: 16px; }
+
+    /* Scroll hint chevron */
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+    .scroll-hint i { width: 28px; height: 28px; color: rgba(255,255,255,0.5); }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--navy);
+      padding: 20px 0;
+    }
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.01em;
+    }
+    .trust-item i {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+    }
+    .trust-item:first-child i { color: var(--red); }
+
+    /* ===== SECTIONS BASE ===== */
+    .section {
+      padding: 96px 24px;
+    }
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+
+    /* ===== SERVICES ===== */
+    .services { background: var(--bg); }
+    .services-intro {
+      font-size: 1.1rem;
+      color: var(--text);
+      max-width: 720px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+    .services-intro strong { color: var(--navy); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+    .service-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card.card-red::before { background: var(--red); }
+    .service-card.card-gold::before { background: var(--gold); }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .service-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-card-icon i { width: 24px; height: 24px; }
+    .service-card-icon.blue { background: rgba(43, 87, 151, 0.1); }
+    .service-card-icon.blue i { color: var(--accent); }
+    .service-card-icon.red { background: rgba(230, 57, 70, 0.1); }
+    .service-card-icon.red i { color: var(--red); }
+    .service-card-icon.gold { background: rgba(212, 168, 75, 0.1); }
+    .service-card-icon.gold i { color: var(--gold); }
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      font-size: 0.925rem;
+      color: var(--text);
+      opacity: 0.85;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .service-card ul {
+      margin-bottom: 20px;
+    }
+    .service-card li {
+      font-size: 0.875rem;
+      color: var(--text);
+      opacity: 0.8;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+    .service-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .service-card .pricing {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .service-card .pricing span {
+      font-weight: 400;
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+
+    /* Compliance callout */
+    .compliance-callout {
+      background: linear-gradient(135deg, #FFF8E8, #FFF3D6);
+      border-left: 6px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 24px;
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .compliance-callout i {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .compliance-callout p {
+      font-size: 0.85rem;
+      color: var(--text);
+      opacity: 0.9;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .compliance-callout strong { color: var(--gold); }
+
+    /* CE Pricing note */
+    .pricing-note {
+      font-size: 0.85rem;
+      color: var(--gray);
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    /* Course table */
+    .course-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.875rem;
+    }
+    .course-table th {
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .course-table th:last-child { text-align: center; }
+    .course-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--light-gray);
+      color: var(--text);
+    }
+    .course-table td:last-child { text-align: center; font-weight: 500; }
+    .course-table tr:nth-child(even) { background: rgba(43, 87, 151, 0.03); }
+
+    /* Prep consulting inline */
+    .prep-services {
+      margin-top: 16px;
+    }
+    .prep-services li {
+      padding: 6px 0 6px 20px;
+      position: relative;
+      font-size: 0.875rem;
+      color: var(--text);
+      opacity: 0.85;
+    }
+    .prep-services li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .prep-pricing {
+      display: flex;
+      gap: 24px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .prep-pricing-item {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 12px 20px;
+      font-size: 0.875rem;
+    }
+    .prep-pricing-item strong {
+      color: var(--navy);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .prep-pricing-item span {
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+
+    /* Frameworks quote */
+    .frameworks-quote {
+      font-style: italic;
+      color: var(--navy);
+      font-size: 0.95rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
+      margin: 16px 0;
+      line-height: 1.6;
+    }
+
+    /* Services CTA */
+    .services-cta {
+      text-align: center;
+      margin-top: 56px;
+    }
+
+    /* ===== IMAGE DIVIDER ===== */
+    .image-divider {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      background: url('https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1260') center/cover no-repeat fixed;
+    }
+    .image-divider img {
+      display: none; /* using CSS background for parallax */
+    }
+    .image-divider::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(26, 61, 109, 0.3) 0%,
+        rgba(43, 87, 151, 0.2) 50%,
+        rgba(26, 61, 109, 0.3) 100%
+      );
+    }
+
+    /* ===== COMING SOON ===== */
+    .coming-soon {
+      background: var(--white);
+    }
+    .coming-soon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+      margin-bottom: 24px;
+    }
+    .coming-soon-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      color: var(--text);
+      transition: var(--transition);
+    }
+    .coming-soon-item:hover {
+      background: rgba(43, 87, 151, 0.06);
+    }
+    .coming-soon-item i {
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+    .coming-soon-item .duration {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--gray);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .coming-soon-note {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    /* ===== WHY READYNEST ===== */
+    .why-section { background: var(--bg); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .why-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .why-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+    .why-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(43, 87, 151, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .why-card-icon i { width: 22px; height: 22px; color: var(--accent); }
+    .why-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .why-card p {
+      font-size: 0.875rem;
+      color: var(--text);
+      opacity: 0.8;
+      line-height: 1.65;
+    }
+
+    /* ===== ABOUT ===== */
+    .about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .about-photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .about-text h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+      margin-top: 24px;
+    }
+    .about-text h3:first-of-type { margin-top: 20px; }
+    .about-text p {
+      font-size: 0.925rem;
+      color: var(--text);
+      opacity: 0.85;
+      line-height: 1.7;
+    }
+
+    /* ===== SERVICE AREA ===== */
+    .service-area {
+      background:
+        linear-gradient(180deg, rgba(26, 61, 109, 0.88) 0%, rgba(43, 87, 151, 0.85) 100%),
+        url('https://images.pexels.com/photos/17995530/pexels-photo-17995530.jpeg?auto=compress&cs=tinysrgb&w=1260') center/cover no-repeat;
+      color: var(--white);
+    }
+    .service-area .section-label { color: var(--gold); }
+    .service-area .section-title { color: var(--white); max-width: none; }
+    .service-area .section-subtitle { color: rgba(255,255,255,0.8); max-width: none; margin: 0 auto; }
+    .service-area-content {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .area-tags {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 32px 0 40px;
+    }
+    .area-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--white);
+      transition: var(--transition);
+    }
+    .area-tag:hover {
+      border-color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.18);
+    }
+    .area-tag i { width: 16px; height: 16px; color: var(--gold); }
+
+    /* ===== CONTACT / VANTA ===== */
+    .contact {
+      position: relative;
+      padding: 96px 24px;
+      overflow: hidden;
+    }
+    #vanta-contact {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    .contact-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .contact .section-label { color: rgba(255,255,255,0.6); }
+    .contact .section-title { color: var(--white); }
+    .contact-body {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .contact-form {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 36px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group label .required { color: var(--red); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--white);
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+    .form-group select { color: rgba(255,255,255,0.7); }
+    .form-group select option { color: var(--text); background: var(--white); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-submit {
+      text-align: center;
+      margin-top: 24px;
+    }
+    .btn-submit {
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 48px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.01em;
+    }
+    .btn-submit:hover {
+      background: #C62D39;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(230, 57, 70, 0.4);
+    }
+    .contact-alt {
+      text-align: center;
+      margin-top: 28px;
+    }
+    .contact-alt p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+    .contact-alt-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .contact-alt-links a {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .contact-alt-links a:hover { color: var(--white); }
+    .contact-alt-links a i { width: 16px; height: 16px; }
+    .contact-alt-links .sep {
+      color: rgba(255,255,255,0.25);
+      font-size: 0.8rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 56px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .footer-brand h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .footer-brand p {
+      font-size: 0.8rem;
+      opacity: 0.6;
+      margin-bottom: 2px;
+    }
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .footer-contact-info a {
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.7);
+      transition: var(--transition);
+    }
+    .footer-contact-info a:hover { color: var(--white); }
+    .footer-contact-info a i { width: 16px; height: 16px; }
+    .footer-trust {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-trust-item i { width: 16px; height: 16px; }
+    .footer-trust-item:first-child i { color: var(--red); }
+    .footer-trust-item:last-child i { color: var(--gold); }
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 20px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-size: 0.75rem;
+      opacity: 0.5;
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      font-style: italic;
+      opacity: 0.4;
+    }
+
+    /* ===== CUSTOM CURSOR (desktop only) ===== */
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--red);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      transition: transform 0.15s ease;
+      mix-blend-mode: normal;
+    }
+    .cursor-ring {
+      width: 36px;
+      height: 36px;
+      border: 2px solid rgba(43, 87, 151, 0.3);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 99998;
+      transition: transform 0.25s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+      transform: translate(-14px, -14px);
+    }
+    .cursor-ring.hover {
+      width: 52px;
+      height: 52px;
+      border-color: rgba(230, 57, 70, 0.4);
+      transform: translate(-22px, -22px);
+    }
+
+    /* ===== STAT COUNTER ===== */
+    .stats-bar {
+      background: var(--navy);
+      padding: 48px 24px;
+    }
+    .stats-bar-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+      min-width: 160px;
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .stat-number .stat-suffix {
+      font-size: 1.2rem;
+      color: var(--gold);
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.55);
+    }
+    .stat-divider {
+      width: 1px;
+      background: rgba(255,255,255,0.12);
+      align-self: stretch;
+    }
+
+    /* ===== FORM SUCCESS STATE ===== */
+    .form-success {
+      text-align: center;
+      padding: 48px 24px;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    .form-success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .form-success-icon i { width: 32px; height: 32px; color: var(--gold); }
+    .form-success h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .form-success p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== NAV ACTIVE STATE ===== */
+    .nav-links a.active {
+      opacity: 1;
+      color: var(--accent);
+    }
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* ===== ABOUT PHOTO ACCENT ===== */
+    .about-photo::after {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: -8px;
+      bottom: 16px;
+      width: 5px;
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      z-index: 9990;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: var(--transition);
+      box-shadow: 0 4px 16px rgba(43, 87, 151, 0.3);
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+    .back-to-top i { width: 20px; height: 20px; }
+
+    /* ===== WHY CARD ICON VARIANTS ===== */
+    .why-card-icon.icon-red {
+      background: rgba(230, 57, 70, 0.08);
+    }
+    .why-card-icon.icon-red i { color: var(--red); }
+    .why-card-icon.icon-gold {
+      background: rgba(212, 168, 75, 0.1);
+    }
+    .why-card-icon.icon-gold i { color: var(--gold); }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      /* Nav */
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(245, 245, 240, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--light-gray);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+
+      /* Hero -- reduce top padding, tighten spacing */
+      .hero { min-height: 90vh; }
+      .hero h1 { font-size: clamp(1.75rem, 6vw, 2.2rem); }
+      .hero-content { padding: 80px 20px 60px; }
+      .hero-body { font-size: 0.95rem; }
+
+      /* Touch targets -- min 44px */
+      .btn { padding: 13px 24px; min-height: 44px; }
+      .btn-hero { padding: 15px 36px; }
+      .btn-large { padding: 14px 32px; }
+      .btn-submit { padding: 14px 40px; min-height: 44px; }
+      .area-tag { padding: 12px 16px; font-size: 0.8rem; min-height: 44px; }
+      .nav-links a { padding: 8px 0; min-height: 44px; display: flex; align-items: center; }
+
+      /* Trust bar -- readable font, tighter layout */
+      .trust-bar-inner { gap: 12px; justify-content: center; }
+      .trust-item { font-size: 0.8rem; gap: 6px; }
+      .trust-item i { width: 16px; height: 16px; }
+
+      /* Sections */
+      .section { padding: 64px 20px; }
+
+      /* Service cards */
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 28px 20px; }
+      .compliance-callout { flex-wrap: wrap; }
+
+      /* Course table -- prevent overflow */
+      .course-table { font-size: 0.8rem; }
+      .course-table th { padding: 8px 10px; font-size: 0.7rem; }
+      .course-table td { padding: 8px 10px; }
+
+      /* Coming soon */
+      .coming-soon-grid { grid-template-columns: 1fr; }
+      .coming-soon-item { font-size: 0.82rem; padding: 12px 14px; }
+
+      /* Why cards */
+      .why-grid { grid-template-columns: 1fr; }
+
+      /* About -- contain AOS fade-left overflow */
+      .about { overflow-x: hidden; }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .about-photo img { height: 280px; }
+      .about-photo::after { display: none; }
+
+      /* Image divider -- remove fixed for iOS Safari */
+      .image-divider {
+        height: 180px;
+        background-attachment: scroll;
+      }
+
+      /* Service area */
+      .area-tags { gap: 8px; }
+
+      /* Form */
+      .form-grid { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px 20px; }
+
+      /* Stats bar */
+      .stats-bar { padding: 40px 20px; }
+      .stats-bar-inner { gap: 20px; justify-content: center; }
+      .stat-item { min-width: 130px; }
+      .stat-number { font-size: 1.5rem; }
+      .stat-divider { display: none; }
+
+      /* Prep pricing */
+      .prep-pricing { flex-direction: column; }
+
+      /* Footer */
+      .footer-top { flex-direction: column; }
+      .footer-trust { flex-direction: column; }
+
+      /* Nav toggle -- min 44px touch target */
+      .nav-toggle { padding: 10px; min-width: 44px; min-height: 44px; }
+
+      /* Hero scroll link -- min 44px touch target */
+      .hero-scroll-link { padding: 10px 0; min-height: 44px; display: inline-flex; }
+
+      /* Form inputs -- min 44px touch target */
+      .form-group input,
+      .form-group select,
+      .form-group textarea { padding: 13px 16px; min-height: 44px; }
+
+      /* Contact alt + footer email links -- min 44px touch target */
+      .contact-alt-links a,
+      .footer-contact-info a { padding: 10px 0; min-height: 44px; }
+
+      /* Custom cursor -- hidden */
+      .cursor-dot, .cursor-ring { display: none; }
+
+      /* Back to top -- avoid overlap with page edge */
+      .back-to-top { bottom: 20px; right: 20px; }
+
+      /* Vanta contact -- reduce min height */
+      #vanta-contact { min-height: 400px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <i data-lucide="shield-plus"></i>
+        ReadyNest Safety Training
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#why">Why ReadyNest</a>
+        <a href="#about">About</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="tel:" class="nav-phone" id="navPhone" style="display:none;">
+          <i data-lucide="phone"></i>
+          <span></span>
+        </a>
+        <a href="#contact" class="btn btn-primary">Schedule Training</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+      poster="https://images.pexels.com/photos/28271070/pexels-photo-28271070.jpeg?auto=compress&cs=tinysrgb&w=1260">
+      <source src="https://videos.pexels.com/video-files/3981742/3981742-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
+      <h1>CPR, First Aid & Safety Training Built Specifically for Childcare Centers</h1>
+      <p class="hero-sub">Fully compliant with Texas childcare licensing requirements.</p>
+      <p class="hero-body">Founded by a licensed paramedic and a preschool director, we bring hands-on safety training directly to your facility in Katy and West Houston.</p>
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn btn-primary btn-hero">Schedule Training</a>
+        <a href="#services" class="hero-scroll-link">See Our Services <i data-lucide="chevron-down"></i></a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <i data-lucide="chevrons-down"></i>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar" data-aos="fade-up" data-aos-duration="600">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><i data-lucide="award"></i> AHA Certified</div>
+      <div class="trust-item"><i data-lucide="shield-check"></i> Texas-Compliant Training</div>
+      <div class="trust-item"><i data-lucide="stethoscope"></i> Licensed Paramedic Instructor</div>
+      <div class="trust-item"><i data-lucide="building"></i> On-Site at Your Facility</div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="section services" id="services">
+    <div class="section-inner">
+      <p class="section-label" data-aos="fade-up">What We Offer</p>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Services</h2>
+      <p class="services-intro" data-aos="fade-up" data-aos-delay="100">
+        <strong>CPR certification, continuing education, and emergency preparedness -- all from one trusted provider.</strong>
+        Most centers juggle three separate vendors for these. With ReadyNest, it is one call.
+      </p>
+
+      <div class="services-grid">
+        <!-- CPR Card -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card-icon blue"><i data-lucide="heart-pulse"></i></div>
+          <h3>CPR & First Aid Certification</h3>
+          <p>American Heart Association Heartsaver certification courses built for childcare providers, educators, and community members. Your team walks out certified the same day with the hands-on training Texas requires.</p>
+          <ul>
+            <li>Infant and pediatric CPR/AED</li>
+            <li>Adult CPR/AED</li>
+            <li>Heartsaver CPR/AED Certification -- meets Texas childcare licensing requirements</li>
+            <li>Basic first aid principles</li>
+            <li>Hands-on instruction using professional CPR manikins and equipment</li>
+            <li>Same-day AHA certification cards</li>
+            <li>Friends & Family CPR -- informational course for parents and caregivers. Contact for group pricing.</li>
+          </ul>
+          <div class="pricing">$75 per student <span>| Minimum 4 students per class</span></div>
+          <div class="compliance-callout">
+            <i data-lucide="alert-triangle"></i>
+            <p><strong>Did you know?</strong> Online-only CPR courses do not meet Texas childcare licensing requirements. Texas mandates hands-on training with manikins. ReadyNest training is fully in-person, exactly as the state requires.</p>
+          </div>
+        </div>
+
+        <!-- CE Courses Card -->
+        <div class="service-card card-red" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card-icon red"><i data-lucide="book-open"></i></div>
+          <h3>Childcare Licensing & Safety Training</h3>
+          <p>Continuing education courses designed to help your team meet Texas childcare licensing requirements. We bring the training to your facility so you do not have to shut down or scramble for coverage.</p>
+          <table class="course-table">
+            <thead>
+              <tr><th>Course</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Emergency Response for Childcare Staff</td><td>$150</td></tr>
+              <tr><td>Illness and Injury Prevention in Childcare Settings</td><td>$150</td></tr>
+              <tr><td>Supervision and Active Monitoring</td><td>$150</td></tr>
+              <tr><td>Fire Safety and Evacuation Procedures</td><td>$150</td></tr>
+              <tr><td>Severe Weather Preparedness</td><td>$150</td></tr>
+              <tr><td>Emergency Reunification Planning</td><td>$150</td></tr>
+            </tbody>
+          </table>
+          <p class="pricing-note">Pricing is per course, not per student.</p>
+        </div>
+
+        <!-- Emergency Prep Card -->
+        <div class="service-card card-gold" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card-icon gold"><i data-lucide="clipboard-check"></i></div>
+          <h3>Emergency Preparedness Consulting</h3>
+          <p>Custom emergency preparedness plans and consulting for childcare facilities. Texas requires every childcare operation to have a written emergency preparedness plan, and inspectors check for it. We help you get it done right.</p>
+          <p class="frameworks-quote">Our preparedness planning combines real-world emergency response experience with nationally recognized emergency management frameworks used by first responders.</p>
+          <ul class="prep-services">
+            <li>Emergency operations plan review</li>
+            <li>Evacuation and relocation planning</li>
+            <li>Reunification planning</li>
+            <li>Full preparedness plan development</li>
+          </ul>
+          <div class="prep-pricing">
+            <div class="prep-pricing-item">
+              <strong>$250 - $400</strong>
+              <span>Plan Review</span>
+            </div>
+            <div class="prep-pricing-item">
+              <strong>$750 - $1,200</strong>
+              <span>Full Plan Development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-cta" data-aos="fade-up">
+        <a href="#contact" class="btn btn-primary btn-large">Schedule Training</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Divider -->
+  <div class="image-divider">
+    <img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1260" alt="Teacher reading to preschool children in a colorful classroom" loading="lazy">
+  </div>
+
+  <!-- Coming Soon -->
+  <section class="section coming-soon" id="coming-soon">
+    <div class="section-inner">
+      <p class="section-label" data-aos="fade-up">Expanding Our Catalog</p>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Coming Soon: Additional CE Courses</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We are expanding our continuing education catalog with specialized courses for childcare providers. These courses are currently in development and expected to launch mid-2026.</p>
+
+      <div class="coming-soon-grid">
+        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="100"><i data-lucide="clock"></i> Emergency Preparedness for Child Care Programs <span class="duration">2 hrs</span></div>
+        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="120"><i data-lucide="clock"></i> Preventing the Spread of Communicable Disease <span class="duration">2 hrs</span></div>
+        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="140"><i data-lucide="clock"></i> Safe Medication Administration in Child Care <span class="duration">2 hrs</span></div>
+        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="160"><i data-lucide="clock"></i> Food Allergies, Anaphylaxis, and Emergency Response <span class="duration">2 hrs</span></div>
+        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="180"><i data-lucide="clock"></i> Building, Playground, and Physical Premises Safety <span class="duration">2 hrs</span></div>
+        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="200"><i data-lucide="clock"></i> Hazardous Materials and Chemical Safety <span class="duration">2 hrs</span></div>
+        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="220"><i data-lucide="clock"></i> Pediatric Injury Prevention and First Response <span class="duration">2 hrs</span></div>
+        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="240"><i data-lucide="clock"></i> Safe Sleep, SIDS Reduction, and Infant Room Risk <span class="duration">2 hrs</span></div>
+        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="260"><i data-lucide="clock"></i> Recognizing and Preventing Abusive Head Trauma <span class="duration">1 hr</span></div>
+        <div class="coming-soon-item" data-aos="fade-up" data-aos-delay="280"><i data-lucide="clock"></i> Transportation Safety for Child Care Programs <span class="duration">2 hrs</span></div>
+      </div>
+
+      <p class="coming-soon-note" data-aos="fade-up">Interested in a specific course? Contact us and we will notify you when it becomes available.</p>
+    </div>
+  </section>
+
+  <!-- Why ReadyNest -->
+  <section class="section why-section" id="why">
+    <div class="section-inner">
+      <p class="section-label" data-aos="fade-up">The Difference</p>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Why Childcare Centers Choose ReadyNest</h2>
+
+      <div class="why-grid">
+        <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="why-card-icon icon-red"><i data-lucide="siren"></i></div>
+          <h3>Real Emergency Experience</h3>
+          <p>Your instructor is a licensed paramedic and Field Training Officer who has responded to real emergencies for years. This is field-tested expertise, not textbook knowledge.</p>
+        </div>
+        <div class="why-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="why-card-icon"><i data-lucide="baby"></i></div>
+          <h3>Built From Inside Childcare</h3>
+          <p>Our co-founder is a preschool director who deals with the same staffing, scheduling, and compliance challenges you do. We designed this training for your reality, not a generic audience.</p>
+        </div>
+        <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="why-card-icon"><i data-lucide="target"></i></div>
+          <h3>Training for What Actually Happens</h3>
+          <p>Infant choking. Playground falls. Allergic reactions. Febrile seizures. Our training covers the scenarios your staff actually faces in childcare settings, not just generic adult CPR.</p>
+        </div>
+        <div class="why-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="why-card-icon"><i data-lucide="shield-check"></i></div>
+          <h3>Hands-On. In-Person. Texas-Compliant.</h3>
+          <p>Professional instruction using CPR manikins and AED trainers. Meets all Texas childcare licensing requirements for hands-on skills training. Online-only courses do not qualify. Ours do.</p>
+        </div>
+        <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="why-card-icon"><i data-lucide="calendar-check"></i></div>
+          <h3>Get Everyone Trained Without Shutting Down</h3>
+          <p>We work around your operations. Training during in-service days, evenings, or weekends. Split sessions available so you can keep classrooms covered and ratios intact.</p>
+        </div>
+        <div class="why-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="why-card-icon icon-gold"><i data-lucide="map-pin"></i></div>
+          <h3>We Come to You</h3>
+          <p>On-site training at your facility. No travel for your staff, no coverage gaps, no disruption to your day. We set up, train, and leave you with certified team members.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stats-bar-inner" data-aos="fade-up">
+      <div class="stat-item">
+        <div class="stat-number"><span data-count="3">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">Service Lines</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">AHA</div>
+        <div class="stat-label">Certified Programs</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">Same-Day</div>
+        <div class="stat-label">Certification Cards</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">100<span class="stat-suffix">%</span></div>
+        <div class="stat-label">Texas Compliant</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <div class="section-inner">
+      <p class="section-label" data-aos="fade-up">Our Story</p>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">About ReadyNest</h2>
+
+      <div class="about-grid">
+        <div class="about-photo" data-aos="fade-right" data-aos-duration="700">
+          <img src="assets/founders_photo.png" alt="Stephanie and Sharief Zahra, founders of ReadyNest Safety Training">
+        </div>
+        <div class="about-text" data-aos="fade-left" data-aos-duration="700">
+          <p>ReadyNest Safety was founded by a husband-and-wife team committed to improving safety in childcare environments.</p>
+
+          <h3>Sharief Zahra</h3>
+          <p>Sharief is a licensed paramedic and Field Training Officer with years of experience in emergency medical response and provider development. He holds a Bachelor's degree in EMS Administration and has trained emergency responders and community members in lifesaving skills throughout his career. Through his work in emergency medical services, he has seen firsthand why preparedness and early intervention matter.</p>
+
+          <h3>Stephanie</h3>
+          <p>Stephanie brings extensive experience as a preschool director, providing valuable insight into the operational needs, regulatory requirements, and day-to-day safety challenges faced by childcare centers.</p>
+
+          <p style="margin-top: 20px;">Together, they created ReadyNest to bridge the gap between emergency medical expertise and childcare leadership. The result: practical safety training and preparedness programs designed specifically for the people who care for children every day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Area -->
+  <section class="section service-area" id="area">
+    <div class="section-inner">
+      <div class="service-area-content">
+        <p class="section-label" data-aos="fade-up">Where We Serve</p>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">We Specialize in Supporting Childcare Providers Across Greater Houston</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">On-site training available for childcare centers, schools, and community organizations throughout:</p>
+
+        <div class="area-tags" data-aos="fade-up" data-aos-delay="150">
+          <div class="area-tag"><i data-lucide="map-pin"></i> Katy</div>
+          <div class="area-tag"><i data-lucide="map-pin"></i> Cypress</div>
+          <div class="area-tag"><i data-lucide="map-pin"></i> West Houston</div>
+          <div class="area-tag"><i data-lucide="map-pin"></i> Greater Houston Area</div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary btn-large" data-aos="fade-up" data-aos-delay="200">Schedule Training</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div id="vanta-contact"></div>
+    <div class="contact-inner">
+      <p class="section-label" data-aos="fade-up">Get Started</p>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Ready to Train Your Team?</h2>
+      <p class="contact-body" data-aos="fade-up" data-aos-delay="100">Fill out the form below and we will get back to you within one business day to schedule your training. No obligation -- we will simply help you schedule training that works best for your team.</p>
+
+      <form class="contact-form" data-aos="fade-up" data-aos-delay="150" action="https://formspree.io/f/xjgagkaa" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Name <span class="required">*</span></label>
+            <input type="text" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Organization <span class="required">*</span></label>
+            <input type="text" name="organization" required placeholder="Facility or organization name">
+          </div>
+          <div class="form-group">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Service Needed <span class="required">*</span></label>
+            <select name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="CPR Certification">CPR Certification</option>
+              <option value="CE Course">CE Course</option>
+              <option value="Emergency Prep Consulting">Emergency Prep Consulting</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Group Size <span class="required">*</span></label>
+            <input type="number" name="group_size" required placeholder="Number of participants" min="1">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <input type="text" name="message" placeholder="Anything else we should know?">
+          </div>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">Schedule Training</button>
+        </div>
+      </form>
+
+      <div class="contact-alt" data-aos="fade-up" data-aos-delay="200">
+        <p>Prefer to reach us directly?</p>
+        <div class="contact-alt-links">
+          <a href="mailto:info@readynestsafety.com"><i data-lucide="mail"></i> info@readynestsafety.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>ReadyNest Safety Training</h4>
+          <p>A division of Safe Nest Preparedness Solutions LLC</p>
+          <p>Katy, Texas</p>
+        </div>
+        <div class="footer-contact-info">
+          <a href="mailto:info@readynestsafety.com"><i data-lucide="mail"></i> info@readynestsafety.com</a>
+        </div>
+        <div class="footer-trust">
+          <div class="footer-trust-item"><i data-lucide="award"></i> American Heart Association Training</div>
+          <div class="footer-trust-item"><i data-lucide="badge-check"></i> Texas Workforce Commission Approved CE Courses</div>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; 2026 ReadyNest Safety Training. All rights reserved.</p>
+        <p class="footer-tagline">"Helping childcare providers create safer environments for children."</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    // ===== Init =====
+    document.addEventListener('DOMContentLoaded', () => {
+      // Lucide Icons
+      lucide.createIcons();
+
+      // AOS
+      AOS.init({
+        once: true,
+        duration: 600,
+        easing: 'ease-out-cubic',
+        offset: 60,
+      });
+
+      // Vanta NET on contact section
+      if (window.VANTA) {
+        const isMobileVanta = window.innerWidth <= 768;
+        VANTA.NET({
+          el: '#vanta-contact',
+          mouseControls: !isMobileVanta,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: isMobileVanta ? 400 : 600,
+          minWidth: 200,
+          scale: 1.0,
+          scaleMobile: 0.8,
+          color: 0x2B5797,
+          backgroundColor: 0x1A3D6D,
+          points: isMobileVanta ? 5 : 8,
+          maxDistance: isMobileVanta ? 18 : 22,
+          spacing: isMobileVanta ? 22 : 18,
+          showDots: true,
+        });
+      }
+
+      // ===== Nav scroll state =====
+      const nav = document.getElementById('nav');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      });
+
+      // ===== Scroll Progress =====
+      const progressBar = document.getElementById('scrollProgress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.style.width = scrollPercent + '%';
+      });
+
+      // ===== Mobile Nav Toggle =====
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = navToggle.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.setAttribute('data-lucide', 'x');
+        } else {
+          icon.setAttribute('data-lucide', 'menu');
+        }
+        lucide.createIcons();
+      });
+
+      // Close mobile nav on link click
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          const icon = navToggle.querySelector('i');
+          icon.setAttribute('data-lucide', 'menu');
+          lucide.createIcons();
+        });
+      });
+
+      // ===== Hero video IntersectionObserver =====
+      const heroVideo = document.querySelector('.hero-video');
+      if (heroVideo) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              heroVideo.play();
+            } else {
+              heroVideo.pause();
+            }
+          });
+        }, { threshold: 0.25 });
+        observer.observe(heroVideo);
+      }
+
+      // ===== Smooth scroll for all anchor links =====
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // ===== GA4 Event Tracking =====
+      // phone_click
+      document.querySelectorAll('a[href^="tel:"]').forEach(el => {
+        el.addEventListener('click', () => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'phone_click', { event_category: 'engagement' });
+          }
+        });
+      });
+
+      // email_click
+      document.querySelectorAll('a[href^="mailto:"]').forEach(el => {
+        el.addEventListener('click', () => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'email_click', { event_category: 'engagement' });
+          }
+        });
+      });
+
+      // cta_schedule_training (all Schedule Training buttons)
+      document.querySelectorAll('.btn-primary, .btn-hero, .btn-submit').forEach(el => {
+        el.addEventListener('click', () => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'cta_schedule_training', { event_category: 'engagement' });
+          }
+        });
+      });
+
+      // ===== Custom Cursor (desktop only) =====
+      const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
+      if (!isMobile) {
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          dot.style.left = mouseX - 4 + 'px';
+          dot.style.top = mouseY - 4 + 'px';
+        });
+
+        function animateRing() {
+          ringX += (mouseX - ringX) * 0.15;
+          ringY += (mouseY - ringY) * 0.15;
+          ring.style.left = ringX - 18 + 'px';
+          ring.style.top = ringY - 18 + 'px';
+          requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.querySelectorAll('a, button, .service-card, .why-card, .coming-soon-item').forEach(el => {
+          el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+          el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+        });
+
+        document.body.style.cursor = 'none';
+        document.querySelectorAll('a, button').forEach(el => el.style.cursor = 'none');
+      }
+
+      // ===== Nav Active State =====
+      const sections = document.querySelectorAll('section[id]');
+      const navAnchors = document.querySelectorAll('.nav-links a');
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navAnchors.forEach(a => {
+              a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+            });
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
+      sections.forEach(s => sectionObserver.observe(s));
+
+      // ===== Form Success State =====
+      const contactForm = document.querySelector('.contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(this);
+
+          fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          }).then(response => {
+            if (response.ok) {
+              this.style.display = 'none';
+              const success = document.createElement('div');
+              success.className = 'form-success';
+              success.innerHTML = `
+                <div class="form-success-icon"><i data-lucide="check-circle"></i></div>
+                <h3>Thank You!</h3>
+                <p>We received your request and will get back to you within one business day to schedule your training.</p>
+              `;
+              this.parentNode.insertBefore(success, this.nextSibling);
+              lucide.createIcons();
+
+              if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', {
+                  event_category: 'conversion',
+                  event_label: 'contact_form'
+                });
+              }
+            }
+          });
+        });
+      }
+
+      // ===== Back to Top =====
+      const backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        backBtn.classList.toggle('visible', window.scrollY > 600);
+      });
+      backBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // ===== Stat Counter Animation =====
+      const statNumbers = document.querySelectorAll('[data-count]');
+      if (statNumbers.length) {
+        const countObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const target = parseInt(el.getAttribute('data-count'));
+              let current = 0;
+              const step = Math.ceil(target / 30);
+              const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                el.textContent = current;
+              }, 40);
+              countObserver.unobserve(el);
+            }
+          });
+        }, { threshold: 0.5 });
+        statNumbers.forEach(el => countObserver.observe(el));
+      }
+    });
+  </script>
+
+  <!-- GA4 (uncomment and add measurement ID when ready) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG7GRNNRG0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MG7GRNNRG0');
+  </script>
+  -->
+
+</body>
+</html>

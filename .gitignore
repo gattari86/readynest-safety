@@ -1,0 +1,4 @@
+node_modules/
+.DS_Store
+*.docx
+create_copy_doc.js

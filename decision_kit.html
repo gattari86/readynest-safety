@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReadyNest Safety Training -- Brand Direction Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&family=Raleway:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #2C2C2C;
+      background: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 32px;
+    }
+
+    /* -- Header -- */
+    .header {
+      text-align: center;
+      padding-bottom: 40px;
+      border-bottom: 2px solid #E8E8E8;
+      margin-bottom: 48px;
+    }
+
+    .header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: #1A1A1A;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    .header .subtitle {
+      font-size: 13px;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
+    }
+
+    .header .intro {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* -- Sections -- */
+    .section {
+      margin-bottom: 56px;
+    }
+
+    .section-number {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #1A1A1A;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #ECECEC;
+    }
+
+    .section p {
+      margin-bottom: 16px;
+      color: #444;
+    }
+
+    /* -- Options grid -- */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .option-card {
+      border: 1px solid #E0E0E0;
+      border-radius: 8px;
+      padding: 28px 24px;
+      background: #FAFAFA;
+    }
+
+    .option-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #1A1A1A;
+      margin-bottom: 16px;
+    }
+
+    .option-card .option-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+
+    /* -- Swatches -- */
+    .swatch-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .swatch-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid #F0F0F0;
+    }
+
+    .swatch-item:last-child {
+      border-bottom: none;
+    }
+
+    .swatch-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      border: 1px solid rgba(0,0,0,0.08);
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    .swatch-info {
+      flex: 1;
+    }
+
+    .swatch-name {
+      font-weight: 500;
+      font-size: 13px;
+      color: #1A1A1A;
+    }
+
+    .swatch-hex {
+      font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .swatch-usage {
+      font-size: 12px;
+      color: #777;
+      margin-top: 2px;
+    }
+
+    .option-note {
+      font-size: 13px;
+      font-style: italic;
+      color: #666;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid #ECECEC;
+    }
+
+    /* -- Mini preview mockups -- */
+    .preview-mockup {
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 20px;
+      border: 1px solid rgba(0,0,0,0.1);
+      font-size: 0;
+    }
+
+    .preview-hero {
+      padding: 28px 24px 24px;
+      text-align: center;
+    }
+
+    .preview-hero .preview-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .preview-hero h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .preview-hero p {
+      font-size: 11px;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      opacity: 0.85;
+    }
+
+    .preview-hero .preview-btn {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+
+    .preview-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      padding: 12px;
+    }
+
+    .preview-card {
+      border-radius: 6px;
+      padding: 14px 10px;
+      text-align: center;
+    }
+
+    .preview-card .card-icon {
+      font-size: 18px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .preview-card h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 9px;
+      margin-bottom: 4px;
+      letter-spacing: 0.2px;
+    }
+
+    .preview-card p {
+      font-size: 8px;
+      line-height: 1.4;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    /* -- Font samples -- */
+    .font-sample-headline {
+      font-size: 22px;
+      color: #1A1A1A;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .font-sample-body {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .font-label {
+      font-size: 11px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: #AAA;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    /* -- Blockquote -- */
+    .highlight-quote {
+      border-left: 3px solid #1F4E79;
+      padding: 16px 20px;
+      margin: 20px 0;
+      background: #F7F9FB;
+      font-size: 16px;
+      font-weight: 500;
+      color: #1A1A1A;
+      font-style: italic;
+    }
+
+    /* -- Bullet lists -- */
+    .clean-list {
+      list-style: none;
+      margin: 16px 0;
+    }
+
+    .clean-list li {
+      padding: 6px 0 6px 20px;
+      position: relative;
+      color: #444;
+    }
+
+    .clean-list li::before {
+      content: "\2014";
+      position: absolute;
+      left: 0;
+      color: #BBB;
+    }
+
+    /* -- Checklist -- */
+    .checklist {
+      list-style: none;
+      margin: 20px 0;
+      counter-reset: checklist-counter;
+    }
+
+    .checklist li {
+      padding: 12px 0 12px 36px;
+      position: relative;
+      color: #333;
+      border-bottom: 1px solid #F0F0F0;
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    .checklist li::before {
+      counter-increment: checklist-counter;
+      content: counter(checklist-counter);
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #F0F0F0;
+      color: #666;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .checklist li strong {
+      font-weight: 600;
+    }
+
+    /* -- Research findings -- */
+    .finding-list {
+      list-style: none;
+      margin: 16px 0;
+    }
+
+    .finding-list li {
+      padding: 8px 0 8px 24px;
+      position: relative;
+      color: #444;
+    }
+
+    .finding-list li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 16px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #D64541;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    /* -- Domain table -- */
+    .domain-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    .domain-table th,
+    .domain-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #ECECEC;
+      font-size: 14px;
+    }
+
+    .domain-table th {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      background: #FAFAFA;
+    }
+
+    .domain-table .recommended {
+      background: #F0F7ED;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    .domain-table .rec-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      color: #2D7A2D;
+      background: #D4EDDA;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-left: 8px;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    /* -- Question box -- */
+    .question-box {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: #F7F9FB;
+      border-radius: 6px;
+      border: 1px solid #E8E8E8;
+    }
+
+    .question-box strong {
+      font-weight: 600;
+    }
+
+    /* -- Footer -- */
+    .footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 2px solid #E8E8E8;
+      margin-top: 56px;
+    }
+
+    .footer p {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .footer a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    /* -- Print styles -- */
+    @media print {
+      body {
+        font-size: 12px;
+        color: #000;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 24px;
+      }
+
+      .header h1 {
+        font-size: 22px;
+      }
+
+      .section h2 {
+        font-size: 17px;
+      }
+
+      .option-card {
+        background: #FFFFFF;
+        border: 1px solid #CCC;
+        break-inside: avoid;
+      }
+
+      .options-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .highlight-quote {
+        background: #FFFFFF;
+        border-left: 2px solid #333;
+      }
+
+      .swatch-box,
+      .preview-mockup,
+      .preview-hero,
+      .preview-card,
+      .preview-btn,
+      .preview-badge,
+      .domain-table .recommended,
+      .rec-badge,
+      .finding-list li::before {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .section {
+        break-inside: avoid;
+      }
+
+      .footer {
+        margin-top: 32px;
+        padding-top: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>ReadyNest Safety Training</h1>
+      <h1 style="font-size: 20px; color: #555; font-weight: 600; margin-bottom: 12px;">Brand Direction Kit</h1>
+      <div class="subtitle">Prepared by Poppy Marketing &amp; Consulting &nbsp;|&nbsp; March 2026</div>
+      <p class="intro">Before we start building, we need a few decisions from you and Stephanie. Pick one option from each section below, and we will take it from there. No wrong answers -- both directions are solid.</p>
+    </div>
+
+    <!-- Section 1: Color Palette -->
+    <div class="section">
+      <div class="section-number">Section 1</div>
+      <h2>Color Palette</h2>
+      <p>Both options use blue as the primary trust color and red as a controlled accent -- the same foundation as your current logo. The difference is intensity.</p>
+
+      <div class="options-grid">
+
+        <!-- Option A -->
+        <div class="option-card">
+          <div class="option-label">Option A</div>
+          <h3>Deep Medical</h3>
+          <ul class="swatch-list">
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #1F4E79;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Deep Medical Blue</div>
+                <div class="swatch-hex">#1F4E79</div>
+                <div class="swatch-usage">Logo, headings, navigation</div>
+              </div>
+            </li>
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #3B73A6;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Soft Professional Blue</div>
+                <div class="swatch-hex">#3B73A6</div>
+                <div class="swatch-usage">Section backgrounds, secondary elements</div>
+              </div>
+            </li>
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #D64541;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Controlled Emergency Red</div>
+                <div class="swatch-hex">#D64541</div>
+                <div class="swatch-usage">Buttons, highlights, heart symbol</div>
+              </div>
+            </li>
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #F4F6F8;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Warm Light Gray</div>
+                <div class="swatch-hex">#F4F6F8</div>
+                <div class="swatch-usage">Page background</div>
+              </div>
+            </li>
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #2F3A45;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Charcoal Slate</div>
+                <div class="swatch-hex">#2F3A45</div>
+                <div class="swatch-usage">Body text</div>
+              </div>
+            </li>
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #E6B54A;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Soft Gold <span style="font-size:11px; color:#AAA;">(optional)</span></div>
+                <div class="swatch-hex">#E6B54A</div>
+                <div class="swatch-usage">Nest element, subtle warmth</div>
+              </div>
+            </li>
+          </ul>
+          <p class="option-note">More subdued, clinical trust. Feels like a medical professional you can rely on.</p>
+
+          <!-- Mini Preview A -->
+          <div class="preview-mockup">
+            <div class="preview-hero" style="background: #1F4E79; color: #FFFFFF;">
+              <span class="preview-badge" style="background: rgba(255,255,255,0.15); color: #E6B54A;">AHA Certified</span>
+              <h4 style="color: #FFFFFF;">Safety training built for childcare</h4>
+              <p style="color: rgba(255,255,255,0.8);">CPR certification, continuing education, and emergency preparedness -- from a team that understands your world.</p>
+              <span class="preview-btn" style="background: #D64541; color: #FFFFFF;">Request Training</span>
+            </div>
+            <div class="preview-cards" style="background: #F4F6F8;">
+              <div class="preview-card" style="background: #FFFFFF;">
+                <span class="card-icon" style="color: #D64541;">&#9829;</span>
+                <h5 style="color: #1F4E79;">CPR Training</h5>
+                <p style="color: #2F3A45;">AHA Heartsaver certification</p>
+              </div>
+              <div class="preview-card" style="background: #FFFFFF;">
+                <span class="card-icon" style="color: #3B73A6;">&#9635;</span>
+                <h5 style="color: #1F4E79;">CE Courses</h5>
+                <p style="color: #2F3A45;">Texas licensing hours</p>
+              </div>
+              <div class="preview-card" style="background: #FFFFFF;">
+                <span class="card-icon" style="color: #E6B54A;">&#9733;</span>
+                <h5 style="color: #1F4E79;">Emergency Prep</h5>
+                <p style="color: #2F3A45;">Plans and drills</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-card">
+          <div class="option-label">Option B</div>
+          <h3>Bright Shield</h3>
+          <ul class="swatch-list">
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #2B5797;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Shield Blue</div>
+                <div class="swatch-hex">#2B5797</div>
+                <div class="swatch-usage">Closest to your current logo</div>
+              </div>
+            </li>
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #1A3D6D;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Deep Navy</div>
+                <div class="swatch-hex">#1A3D6D</div>
+                <div class="swatch-usage">Dark contrast sections</div>
+              </div>
+            </li>
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #E63946;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Bright Emergency Red</div>
+                <div class="swatch-hex">#E63946</div>
+                <div class="swatch-usage">Buttons, highlights</div>
+              </div>
+            </li>
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #F5F5F0;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Warm White</div>
+                <div class="swatch-hex">#F5F5F0</div>
+                <div class="swatch-usage">Page background</div>
+              </div>
+            </li>
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #2C2C2C;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Near Black</div>
+                <div class="swatch-hex">#2C2C2C</div>
+                <div class="swatch-usage">Body text</div>
+              </div>
+            </li>
+            <li class="swatch-item">
+              <div class="swatch-box" style="background: #D4A84B;"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Gold <span style="font-size:11px; color:#AAA;">(optional)</span></div>
+                <div class="swatch-hex">#D4A84B</div>
+                <div class="swatch-usage">Accent warmth</div>
+              </div>
+            </li>
+          </ul>
+          <p class="option-note">Bolder, more energetic. Feels like a shield protecting kids.</p>
+
+          <!-- Mini Preview B -->
+          <div class="preview-mockup">
+            <div class="preview-hero" style="background: #1A3D6D; color: #FFFFFF;">
+              <span class="preview-badge" style="background: rgba(255,255,255,0.15); color: #D4A84B;">AHA Certified</span>
+              <h4 style="color: #FFFFFF;">Safety training built for childcare</h4>
+              <p style="color: rgba(255,255,255,0.8);">CPR certification, continuing education, and emergency preparedness -- from a team that understands your world.</p>
+              <span class="preview-btn" style="background: #E63946; color: #FFFFFF;">Request Training</span>
+            </div>
+            <div class="preview-cards" style="background: #F5F5F0;">
+              <div class="preview-card" style="background: #FFFFFF;">
+                <span class="card-icon" style="color: #E63946;">&#9829;</span>
+                <h5 style="color: #2B5797;">CPR Training</h5>
+                <p style="color: #2C2C2C;">AHA Heartsaver certification</p>
+              </div>
+              <div class="preview-card" style="background: #FFFFFF;">
+                <span class="card-icon" style="color: #2B5797;">&#9635;</span>
+                <h5 style="color: #2B5797;">CE Courses</h5>
+                <p style="color: #2C2C2C;">Texas licensing hours</p>
+              </div>
+              <div class="preview-card" style="background: #FFFFFF;">
+                <span class="card-icon" style="color: #D4A84B;">&#9733;</span>
+                <h5 style="color: #2B5797;">Emergency Prep</h5>
+                <p style="color: #2C2C2C;">Plans and drills</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 2: Font Pairing -->
+    <div class="section">
+      <div class="section-number">Section 2</div>
+      <h2>Font Pairing</h2>
+      <p>Both options are clean and professional. The difference is subtle -- one feels more corporate, the other slightly warmer.</p>
+
+      <div class="options-grid">
+
+        <!-- Option 1 -->
+        <div class="option-card">
+          <div class="option-label">Option 1</div>
+          <h3>Clean Corporate</h3>
+
+          <div class="font-label">Headlines: Montserrat SemiBold</div>
+          <p class="font-sample-headline" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">CPR Training for Childcare Providers</p>
+
+          <div class="font-label">Body: Inter</div>
+          <p class="font-sample-body" style="font-family: 'Inter', sans-serif;">ReadyNest Safety provides CPR certification, continuing education, and emergency preparedness plans designed specifically for childcare facilities in Katy and West Houston. Founded by a paramedic and a preschool director who understand both sides of the equation.</p>
+
+          <p class="option-note">Structured, modern, corporate-clean.</p>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="option-card">
+          <div class="option-label">Option 2</div>
+          <h3>Warm Professional</h3>
+
+          <div class="font-label">Headlines: Raleway Bold</div>
+          <p class="font-sample-headline" style="font-family: 'Raleway', sans-serif; font-weight: 700;">CPR Training for Childcare Providers</p>
+
+          <div class="font-label">Body: Open Sans</div>
+          <p class="font-sample-body" style="font-family: 'Open Sans', sans-serif;">ReadyNest Safety provides CPR certification, continuing education, and emergency preparedness plans designed specifically for childcare facilities in Katy and West Houston. Founded by a paramedic and a preschool director who understand both sides of the equation.</p>
+
+          <p class="option-note">Slightly warmer, approachable but still professional.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 3: Logo -->
+    <div class="section">
+      <div class="section-number">Section 3</div>
+      <h2>Logo</h2>
+
+      <p>Your shield + heart + EKG line concept is strong -- it communicates safety, medical credibility, and protection in one mark. Here is what we will do with it:</p>
+
+      <ul class="clean-list">
+        <li>Clean it up so it looks sharp everywhere -- website, business cards, social media, even tiny on a phone screen</li>
+        <li>Create all the file versions you will need going forward (transparent backgrounds, favicon for browser tabs, email signature size)</li>
+        <li>Simplify the mascot owl for social media posts (same character, just cleaner with fewer accessories)</li>
+      </ul>
+
+      <div class="question-box">
+        <strong>Quick question:</strong> Are you and Stephanie happy with the shield concept as the direction, or would you like us to explore something different?
+      </div>
+    </div>
+
+    <!-- Section 4: Domain -->
+    <div class="section">
+      <div class="section-number">Section 4</div>
+      <h2>Domain</h2>
+
+      <p>You purchased three domains on GoDaddy. Here they are with our recommendation:</p>
+
+      <table class="domain-table">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="recommended">
+            <td><strong>readynestsafety.com</strong> <span class="rec-badge">Recommended</span></td>
+            <td>Matches your email (info@readynestsafety.com). Short, professional, easy to say on the phone or put on a flyer.</td>
+          </tr>
+          <tr>
+            <td>readynestcpr.com</td>
+            <td>CPR-specific. Good for marketing campaigns but limits you as services expand. Redirect to primary.</td>
+          </tr>
+          <tr>
+            <td>safenestpreparedness.com</td>
+            <td>Matches your LLC name. Could be useful later for a corporate-facing brand. Redirect to primary.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size: 13px; color: #888;">We will set up whichever domain you choose. The other two can redirect to it so no traffic is lost.</p>
+
+      <div class="question-box">
+        <strong>Quick question:</strong> Are you good with readynestsafety.com as the primary, or do you prefer one of the others?
+      </div>
+    </div>
+
+    <!-- Section 5: Website Messaging -->
+    <div class="section">
+      <div class="section-number">Section 5</div>
+      <h2>Website Messaging</h2>
+
+      <p>The content you put together is already in a great place. Your instinct to lead with the childcare angle is exactly right. Here is why:</p>
+
+      <p>We looked at every CPR training provider serving the Katy and West Houston market. What we found:</p>
+
+      <ul class="finding-list">
+        <li>Most competitors are general CPR companies that list childcare as one of many audiences</li>
+        <li>Nobody bundles CPR + continuing education + emergency preparedness in one place</li>
+        <li>Nobody positions from inside the childcare world -- they all market <em>to</em> childcare from the outside</li>
+        <li>Online-only CPR does <strong>not</strong> meet Texas childcare licensing requirements -- your hands-on, in-person training is exactly what the state requires</li>
+      </ul>
+
+      <p style="margin-top: 24px; margin-bottom: 8px; font-weight: 500; color: #1A1A1A;">Your strongest angle on the website:</p>
+
+      <div class="highlight-quote">
+        "Safety training built from inside the childcare world -- by a paramedic and a preschool director."
+      </div>
+
+      <p>This is a true, defensible position that no competitor can replicate. The combination of Sharief's emergency medical experience and Stephanie's hands-on preschool leadership is genuinely unique in this market. We will use your content as the foundation and sharpen the language to make this angle come through clearly.</p>
+    </div>
+
+    <!-- Section 6: What We Need -->
+    <div class="section">
+      <div class="section-number">Section 6</div>
+      <h2>What We Need From You</h2>
+
+      <p>Just four decisions to get us started:</p>
+
+      <ol class="checklist">
+        <li><strong>Palette:</strong> Option A (Deep Medical) or Option B (Bright Shield)?</li>
+        <li><strong>Fonts:</strong> Option 1 (Clean Corporate) or Option 2 (Warm Professional)?</li>
+        <li><strong>Logo:</strong> Keep the shield concept or explore something different?</li>
+        <li><strong>Domain:</strong> Good with readynestsafety.com as primary, or prefer another?</li>
+        <li><strong>Phone number:</strong> Once you have a business number (Google Voice is a great free option to start with), send it our way so we can add it to the site.</li>
+      </ol>
+
+      <p style="margin-top: 24px; color: #666; font-size: 14px;">Once you confirm these, we will start building. There will be a couple of quick account setups needed before launch (website hosting, contact form, analytics) -- we will send you simple step-by-step instructions for those when the time comes.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p><strong>Poppy Marketing &amp; Consulting</strong></p>
+      <p><a href="mailto:ricardo@poppymarketingandconsulting.com">ricardo@poppymarketingandconsulting.com</a> &nbsp;|&nbsp; (941) 777-4933</p>
+    </div>
+
+  </div>
+</body>
+</html>
