@@ -512,7 +512,9 @@
 
     /* Coming Soon badge */
     .card-badge {
-      display: inline-block;
+      position: absolute;
+      top: 16px;
+      right: 16px;
       background: var(--gold);
       color: var(--navy);
       font-family: var(--font-display);
@@ -522,7 +524,7 @@
       text-transform: uppercase;
       padding: 5px 14px;
       border-radius: 50px;
-      margin-bottom: 16px;
+      z-index: 2;
     }
 
     /* CE course list */
@@ -1244,7 +1246,7 @@
       .ce-course-list li { font-size: 0.8rem; padding: 9px 0; }
       .ce-pricing-summary { flex-direction: column; gap: 4px; font-size: 0.8rem; }
       .ce-pricing-summary .sep { display: none; }
-      .card-badge { font-size: 0.65rem; }
+      .card-badge { position: static; display: inline-block; margin-bottom: 12px; font-size: 0.65rem; }
 
       /* Why cards */
       .why-grid { grid-template-columns: 1fr; }
