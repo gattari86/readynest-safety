@@ -282,7 +282,7 @@
       z-index: 3;
       animation: scrollBounce 2s ease-in-out infinite;
     }
-    .scroll-hint i { width: 28px; height: 28px; color: rgba(255,255,255,0.5); }
+    .scroll-hint i { width: 28px; height: 28px; color: var(--gold); }
     @keyframes scrollBounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(8px); }
@@ -1156,8 +1156,9 @@
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
-      /* Nav */
+      /* Nav -- hide CTA button on mobile (hero CTA handles it) */
       .nav-links { display: none; }
+      .nav-actions { display: none; }
       .nav-toggle { display: block; }
       .nav-links.active {
         display: flex;
@@ -1174,11 +1175,12 @@
         box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       }
 
-      /* Hero -- reduce top padding, tighten spacing */
+      /* Hero -- declutter on mobile */
       .hero { min-height: 90vh; }
       .hero h1 { font-size: clamp(1.75rem, 6vw, 2.2rem); }
       .hero-content { padding: 80px 20px 60px; }
-      .hero-body { font-size: 0.95rem; }
+      .hero-body { display: none; }
+      .hero-scroll-link { display: none !important; }
 
       /* Touch targets -- min 44px */
       .btn { padding: 13px 24px; min-height: 44px; }
