@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ReadyNest Safety Training | Brand Guidelines</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --bg: #F5F5F0;
+      --text: #2C2C2C;
+      --accent: #2B5797;
+      --accent-hover: #1A3D6D;
+      --navy: #1A3D6D;
+      --gold: #BC8025;
+      --soft-gold: #FDE180;
+      --shield-blue: #2B5797;
+      --emergency-red: #A70B15;
+      --bright-red: #C12029;
+      --gray: #888888;
+      --light-gray: #E8E8E4;
+      --white: #FFFFFF;
+      --card-bg: #FFFFFF;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 40px rgba(0,0,0,0.12);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --font-display: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HEADER ===== */
+    .brand-header {
+      background: linear-gradient(135deg, var(--shield-blue) 0%, var(--navy) 100%);
+      color: var(--white);
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .brand-header img {
+      max-width: 120px;
+      margin: 0 auto 32px;
+    }
+    .brand-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .brand-header p {
+      font-size: 16px;
+      opacity: 0.8;
+      max-width: 500px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section {
+      padding: 64px 0;
+    }
+    .section + .section {
+      border-top: 1px solid var(--light-gray);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 700;
+      color: var(--shield-blue);
+      margin-bottom: 8px;
+    }
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--gray);
+      margin-bottom: 40px;
+      max-width: 640px;
+    }
+
+    /* ===== COLOR PALETTE ===== */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .color-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: box-shadow var(--transition);
+    }
+    .color-card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+    .color-swatch {
+      height: 100px;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px 16px;
+    }
+    .color-swatch span {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.9);
+      color: var(--text);
+    }
+    .color-info {
+      padding: 16px;
+    }
+    .color-info h3 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .color-info .color-usage {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .color-specs {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .color-specs code {
+      font-size: 12px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      background: var(--bg);
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: var(--text);
+    }
+    .color-proportion {
+      margin-top: 40px;
+    }
+    .proportion-bar {
+      display: flex;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .proportion-bar div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: var(--font-display);
+    }
+    .proportion-labels {
+      display: flex;
+      margin-top: 12px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .proportion-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .proportion-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    .type-grid {
+      display: grid;
+      gap: 24px;
+    }
+    .type-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+    .type-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--shield-blue);
+      margin-bottom: 8px;
+    }
+    .type-sample-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .type-sample-subhead {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(18px, 2.5vw, 24px);
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .type-sample-body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .type-meta {
+      font-size: 13px;
+      color: var(--gray);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+    .type-meta strong {
+      color: var(--text);
+    }
+    .type-note {
+      background: #EEF3FA;
+      border-left: 3px solid var(--shield-blue);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-top: 24px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ===== LOGO SECTION ===== */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .logo-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+    }
+    .logo-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      min-height: 180px;
+    }
+    .logo-preview img {
+      max-height: 100px;
+      max-width: 180px;
+      margin: 0 auto;
+    }
+    .logo-preview.dark-bg {
+      background: var(--shield-blue);
+    }
+    .logo-preview.medium-bg {
+      background: var(--bg);
+    }
+    .logo-meta {
+      padding: 16px;
+      border-top: 1px solid var(--light-gray);
+      font-size: 13px;
+    }
+    .logo-meta h4 {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .logo-meta p {
+      color: var(--gray);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .logo-variations-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+      font-size: 14px;
+    }
+    .logo-variations-table th,
+    .logo-variations-table td {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .logo-variations-table th {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--shield-blue);
+      background: #EEF3FA;
+    }
+    .logo-variations-table td {
+      color: var(--text);
+    }
+    .logo-variations-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ===== RULES (DO / DON'T) ===== */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 640px) {
+      .rules-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .rules-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+    .rules-card h3 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rules-card.do h3 {
+      color: #1B7A3D;
+    }
+    .rules-card.dont h3 {
+      color: var(--emergency-red);
+    }
+    .rules-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .rules-card li {
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 6px 0 6px 24px;
+      position: relative;
+    }
+    .rules-card.do li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: #1B7A3D;
+      font-weight: 700;
+    }
+    .rules-card.dont li::before {
+      content: "\2717";
+      position: absolute;
+      left: 0;
+      color: var(--emergency-red);
+      font-weight: 700;
+    }
+
+    /* ===== CONTENT PILLARS ===== */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .pillar-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      border-top: 4px solid var(--shield-blue);
+      transition: box-shadow var(--transition);
+    }
+    .pillar-card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+    .pillar-card:nth-child(2) {
+      border-top-color: var(--gold);
+    }
+    .pillar-card:nth-child(3) {
+      border-top-color: var(--soft-gold);
+    }
+    .pillar-percent {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--shield-blue);
+      margin-bottom: 4px;
+    }
+    .pillar-card:nth-child(2) .pillar-percent {
+      color: var(--gold);
+    }
+    .pillar-card:nth-child(3) .pillar-percent {
+      color: #8B7340;
+    }
+    .pillar-card h3 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .pillar-card p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .pillar-note {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .pillar-card:nth-child(1) .pillar-note {
+      background: #EEF3FA;
+      color: var(--shield-blue);
+    }
+    .pillar-card:nth-child(2) .pillar-note {
+      background: #FDF5E0;
+      color: #7A5B1A;
+    }
+    .pillar-card:nth-child(3) .pillar-note {
+      background: #FFF8E5;
+      color: #8B7340;
+    }
+
+    /* ===== CLEAR SPACE DIAGRAM ===== */
+    .clearspace-demo {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .clearspace-container {
+      display: inline-block;
+      position: relative;
+      border: 2px dashed var(--shield-blue);
+      padding: 40px;
+      border-radius: var(--radius-sm);
+    }
+    .clearspace-container img {
+      max-height: 80px;
+      margin: 0 auto;
+    }
+    .clearspace-label {
+      position: absolute;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--shield-blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .clearspace-label.top { top: 8px; left: 50%; transform: translateX(-50%); }
+    .clearspace-label.bottom { bottom: 8px; left: 50%; transform: translateX(-50%); }
+    .clearspace-label.left { left: 8px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+    .clearspace-label.right { right: 8px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+    .clearspace-caption {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    /* ===== FOOTER ===== */
+    .brand-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .brand-footer strong {
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ===== NAV ===== */
+    .brand-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--light-gray);
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .brand-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      gap: 4px;
+    }
+    .brand-nav a {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 14px 16px;
+      color: var(--gray);
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color var(--transition), border-color var(--transition);
+    }
+    .brand-nav a:hover {
+      color: var(--shield-blue);
+      border-bottom-color: var(--shield-blue);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .brand-header { padding: 60px 24px 48px; }
+      .section { padding: 48px 0; }
+      .color-grid { grid-template-columns: 1fr; }
+      .logo-grid { grid-template-columns: 1fr; }
+      .brand-nav a { padding: 12px 12px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="brand-header">
+    <img src="assets/white-icon.png" alt="ReadyNest Safety Training Shield">
+    <h1>Brand Guidelines</h1>
+    <p>ReadyNest Safety Training -- Visual Identity and Usage Standards</p>
+  </header>
+
+  <!-- ===== NAV ===== -->
+  <nav class="brand-nav">
+    <div class="brand-nav-inner">
+      <a href="#colors">Colors</a>
+      <a href="#typography">Typography</a>
+      <a href="#logo">Logo</a>
+      <a href="#usage-rules">Usage Rules</a>
+      <a href="#content-pillars">Content Pillars</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===== COLOR PALETTE ===== -->
+    <section class="section" id="colors">
+      <div class="container">
+        <h2 class="section-title">Color Palette</h2>
+        <p class="section-subtitle">The ReadyNest palette balances authority and trust (Shield Blue) with warmth and credibility (Gold), reserving red for emergency-specific contexts only.</p>
+
+        <div class="color-grid">
+          <!-- Shield Blue -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #2B5797;">
+              <span>#2B5797</span>
+            </div>
+            <div class="color-info">
+              <h3>Shield Blue</h3>
+              <p class="color-usage">Primary brand color. Headers, nav, buttons, footer backgrounds, primary surfaces.</p>
+              <div class="color-specs">
+                <code>HEX #2B5797</code>
+                <code>RGB 43, 87, 151</code>
+                <code>CMYK 92, 72, 12, 1</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gold -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #BC8025;">
+              <span>#BC8025</span>
+            </div>
+            <div class="color-info">
+              <h3>Gold</h3>
+              <p class="color-usage">Accent color. Trust badges, certification highlights, accent borders, nest element.</p>
+              <div class="color-specs">
+                <code>HEX #BC8025</code>
+                <code>RGB 188, 128, 37</code>
+                <code>CMYK 24, 51, 100, 6</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soft Gold -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #FDE180;">
+              <span style="background: rgba(0,0,0,0.08); color: #5A4A1A;">#FDE180</span>
+            </div>
+            <div class="color-info">
+              <h3>Soft Gold</h3>
+              <p class="color-usage">Highlights, soft backgrounds, secondary accents. Use to warm a layout without heaviness.</p>
+              <div class="color-specs">
+                <code>HEX #FDE180</code>
+                <code>RGB 253, 225, 128</code>
+                <code>CMYK 2, 9, 60, 0</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergency Red -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #A70B15;">
+              <span>#A70B15</span>
+            </div>
+            <div class="color-info">
+              <h3>Emergency Red</h3>
+              <p class="color-usage">CPR and emergency references, badges, icons. Controlled use -- never as a background fill.</p>
+              <div class="color-specs">
+                <code>HEX #A70B15</code>
+                <code>RGB 167, 11, 21</code>
+                <code>CMYK 23, 100, 100, 18</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bright Red -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #C12029;">
+              <span>#C12029</span>
+            </div>
+            <div class="color-info">
+              <h3>Bright Red</h3>
+              <p class="color-usage">CTA buttons and urgent elements only. Limited use -- should never dominate a layout.</p>
+              <div class="color-specs">
+                <code>HEX #C12029</code>
+                <code>RGB 193, 32, 41</code>
+                <code>CMYK 17, 100, 96, 7</code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proportion Bar -->
+        <div class="color-proportion">
+          <h3 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 12px;">Recommended Color Distribution</h3>
+          <div class="proportion-bar">
+            <div style="width: 60%; background: #2B5797; color: white;">60%</div>
+            <div style="width: 25%; background: #FFFFFF; color: #2C2C2C; border-top: 1px solid #E8E8E4; border-bottom: 1px solid #E8E8E4;">25%</div>
+            <div style="width: 10%; background: #BC8025; color: white;">10%</div>
+            <div style="width: 5%; background: #A70B15; color: white;">5%</div>
+          </div>
+          <div class="proportion-labels">
+            <div class="proportion-label">
+              <div class="proportion-dot" style="background: #2B5797;"></div>
+              Shield Blue -- 60%
+            </div>
+            <div class="proportion-label">
+              <div class="proportion-dot" style="background: #FFFFFF; border: 1px solid #E8E8E4;"></div>
+              White / Light -- 25%
+            </div>
+            <div class="proportion-label">
+              <div class="proportion-dot" style="background: #BC8025;"></div>
+              Gold -- 10%
+            </div>
+            <div class="proportion-label">
+              <div class="proportion-dot" style="background: #A70B15;"></div>
+              Red -- 5%
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TYPOGRAPHY ===== -->
+    <section class="section" id="typography">
+      <div class="container">
+        <h2 class="section-title">Typography</h2>
+        <p class="section-subtitle">ReadyNest uses a two-tier type system: licensed print fonts for premium materials, and web-safe alternatives for digital applications.</p>
+
+        <div class="type-grid">
+          <!-- Headlines -->
+          <div class="type-card">
+            <div class="type-label">Headlines</div>
+            <div class="type-sample-headline">Safety Starts Here</div>
+            <div class="type-meta">
+              <strong>Print:</strong> Club Type Mercurius Medium -- 80pt for primary headers<br>
+              <strong>Web:</strong> Montserrat 700 (Bold) -- used as the web-safe alternative
+            </div>
+          </div>
+
+          <!-- Subheaders -->
+          <div class="type-card">
+            <div class="type-label">Subheaders</div>
+            <div class="type-sample-subhead">Certified CPR Training for Childcare Professionals</div>
+            <div class="type-meta">
+              <strong>Print:</strong> Circular Pro Black -- 40pt for subheaders<br>
+              <strong>Web:</strong> Montserrat 600 (Semi-Bold) -- used as the web-safe alternative
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="type-card">
+            <div class="type-label">Body Text</div>
+            <div class="type-sample-body">ReadyNest Safety Training delivers AHA-certified CPR courses, continuing education credits, and emergency preparedness plans built specifically for childcare centers across the greater Houston area.</div>
+            <div class="type-meta">
+              <strong>Print:</strong> Circular Pro Book -- 20pt for body copy<br>
+              <strong>Web:</strong> Inter 400 (Regular) -- used as the web-safe alternative
+            </div>
+          </div>
+        </div>
+
+        <div class="type-note">
+          <strong>Licensing note:</strong> Club Type Mercurius and Circular Pro are licensed typefaces. They should be used in print materials, presentations, and any context where font embedding is controlled. For web, email, and digital platforms where font licensing is not guaranteed, use Montserrat (headlines/subheads) and Inter (body) as approved alternatives.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LOGO ===== -->
+    <section class="section" id="logo">
+      <div class="container">
+        <h2 class="section-title">Logo System</h2>
+        <p class="section-subtitle">The ReadyNest logo exists in 9 variations across three formats (Primary, Horizontal, Icon) and three color treatments (Full Color, Black, White).</p>
+
+        <div class="logo-grid">
+          <!-- Full Color Icon -->
+          <div class="logo-card">
+            <div class="logo-preview medium-bg">
+              <img src="assets/full-color-icon.png" alt="ReadyNest Full Color Icon">
+            </div>
+            <div class="logo-meta">
+              <h4>Full Color -- Icon</h4>
+              <p>Social media profiles, favicons, merchandising, small-format applications</p>
+            </div>
+          </div>
+
+          <!-- White Icon on Blue -->
+          <div class="logo-card">
+            <div class="logo-preview dark-bg">
+              <img src="assets/white-icon.png" alt="ReadyNest White Icon">
+            </div>
+            <div class="logo-meta">
+              <h4>White -- Icon</h4>
+              <p>On dark or blue backgrounds. Social media profiles on dark templates.</p>
+            </div>
+          </div>
+
+          <!-- White Primary on Blue -->
+          <div class="logo-card">
+            <div class="logo-preview dark-bg">
+              <img src="assets/white-primary.png" alt="ReadyNest White Primary Logo" style="max-height: 120px;">
+            </div>
+            <div class="logo-meta">
+              <h4>White -- Primary (Stacked)</h4>
+              <p>First choice for websites, footers, stationery on dark backgrounds</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Variations Table -->
+        <table class="logo-variations-table">
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Full Color</th>
+              <th>Black</th>
+              <th>White</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primary (Stacked)</strong></td>
+              <td>Websites, footers, stationery -- first choice</td>
+              <td>Single-color print, fax, stamps</td>
+              <td>Dark backgrounds, navy surfaces</td>
+            </tr>
+            <tr>
+              <td><strong>Horizontal</strong></td>
+              <td>When vertical space is limited -- banners, email headers</td>
+              <td>Single-color horizontal applications</td>
+              <td>Dark horizontal layouts</td>
+            </tr>
+            <tr>
+              <td><strong>Icon (Shield Only)</strong></td>
+              <td>Social profiles, favicons, small-format</td>
+              <td>Watermarks, embossing</td>
+              <td>Dark background icons, app icons</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Clear Space -->
+        <div class="clearspace-demo">
+          <h3 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 20px;">Minimum Clear Space</h3>
+          <div class="clearspace-container">
+            <span class="clearspace-label top">1x</span>
+            <span class="clearspace-label bottom">1x</span>
+            <span class="clearspace-label left">1x</span>
+            <span class="clearspace-label right">1x</span>
+            <img src="assets/full-color-icon.png" alt="Clear space example">
+          </div>
+          <p class="clearspace-caption">Maintain clear space equal to at least the height of the shield on all four sides. No text, graphics, or other logos should enter this zone.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== USAGE RULES ===== -->
+    <section class="section" id="usage-rules">
+      <div class="container">
+        <h2 class="section-title">Usage Rules</h2>
+        <p class="section-subtitle">Follow these rules to maintain brand integrity across all materials -- print, digital, social, and merchandise.</p>
+
+        <div class="rules-grid">
+          <div class="rules-card do">
+            <h3>&#10003; Do</h3>
+            <ul>
+              <li>Always maintain clear space around the logo (at least the height of the shield on all sides)</li>
+              <li>Use the white logo on dark backgrounds, full color on light backgrounds</li>
+              <li>Keep the shield proportions -- never stretch or distort</li>
+              <li>Use brand colors consistently across all materials</li>
+              <li>Use Shield Blue as the dominant color in any layout (target 60%)</li>
+              <li>Reserve red tones for emergency and CPR-specific content only</li>
+            </ul>
+          </div>
+          <div class="rules-card dont">
+            <h3>&#10007; Don't</h3>
+            <ul>
+              <li>Don't change logo colors or add effects (shadows, gradients, outlines)</li>
+              <li>Don't place the full color logo on busy or photographic backgrounds</li>
+              <li>Don't rotate, crop, or rearrange logo elements</li>
+              <li>Don't use Emergency Red as a background color -- it is too aggressive for surfaces</li>
+              <li>Don't mix brand fonts with other typefaces in the same material</li>
+              <li>Don't use Bright Red as a dominant color -- limit to CTA buttons and urgent callouts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTENT PILLARS ===== -->
+    <section class="section" id="content-pillars">
+      <div class="container">
+        <h2 class="section-title">Social Media Content Pillars</h2>
+        <p class="section-subtitle">All social media content should map to one of these three pillars. This ensures a balanced feed that educates, builds trust, and humanizes the brand.</p>
+
+        <div class="pillars-grid">
+          <!-- Pillar 1 -->
+          <div class="pillar-card">
+            <div class="pillar-percent">40%</div>
+            <h3>Safety Education</h3>
+            <p>CPR tips, first aid facts, childcare safety statistics, "Did you know?" content. Positions ReadyNest as the go-to safety expert in the childcare space.</p>
+            <span class="pillar-note">Shield Blue backgrounds with white text</span>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="pillar-card">
+            <div class="pillar-percent">30%</div>
+            <h3>Compliance & Credibility</h3>
+            <p>Texas licensing requirements, AHA certification information, training updates, regulatory reminders. Builds trust and creates urgency to stay compliant.</p>
+            <span class="pillar-note">Gold accents for certification and badge visuals</span>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="pillar-card">
+            <div class="pillar-percent">30%</div>
+            <h3>Community & Behind the Scenes</h3>
+            <p>Training session photos, client testimonials, Sharief and Stephanie's story, childcare industry spotlights. Humanizes the brand and builds connection.</p>
+            <span class="pillar-note">Warm tones with real photography</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="brand-footer">
+    <p>This brand guide is a confidential deliverable of <strong>Poppy Marketing & Consulting</strong>.</p>
+    <p style="margin-top: 4px; font-size: 12px;">Prepared for ReadyNest Safety Training -- March 2026</p>
+  </footer>
+
+</body>
+</html>
