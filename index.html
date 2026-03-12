@@ -18,6 +18,11 @@
   <meta name="twitter:description" content="CPR, First Aid & Safety Training Built Specifically for Childcare Centers.">
   <meta name="twitter:image" content="https://readynest-safety.vercel.app/assets/og-image.png">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,6 +126,7 @@
       align-items: center;
       gap: 8px;
     }
+    .nav-logo-img { width: 36px; height: 36px; object-fit: contain; }
     .nav-logo i, .nav-logo svg { width: 28px; height: 28px; color: var(--red); }
     .nav-links {
       display: flex;
@@ -943,6 +949,7 @@
       margin-bottom: 40px;
       flex-wrap: wrap;
     }
+    .footer-logo { width: 140px; height: auto; margin-bottom: 12px; }
     .footer-brand h4 {
       font-family: var(--font-display);
       font-weight: 700;
@@ -1324,7 +1331,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <i data-lucide="shield-plus"></i>
+        <img src="assets/full-color-icon.png" alt="ReadyNest Safety Training logo" class="nav-logo-img">
         ReadyNest Safety Training
       </a>
       <div class="nav-links" id="navLinks">
@@ -1651,6 +1658,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
+          <img src="assets/white-primary.png" alt="ReadyNest Safety Training" class="footer-logo">
           <h4>ReadyNest Safety Training</h4>
           <p>A division of Safe Nest Preparedness Solutions LLC</p>
           <p>Katy, Texas</p>
