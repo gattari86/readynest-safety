@@ -355,9 +355,7 @@
     .section-label {
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      font-size: 0.875rem;
       color: var(--gold);
       margin-bottom: 12px;
     }
@@ -402,6 +400,7 @@
       overflow: hidden;
     }
     .service-card::before {
+      display: none;
       content: '';
       position: absolute;
       top: 0;
@@ -413,7 +412,6 @@
       transform-origin: left;
       transition: var(--transition);
     }
-    .service-card:hover::before { transform: scaleX(1); }
     .service-card.card-red::before { background: var(--red); }
     .service-card.card-gold::before { background: var(--gold); }
     .service-card:hover {
@@ -598,19 +596,11 @@
     .why-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 48px 40px;
       margin-top: 48px;
     }
     .why-card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      padding: 32px 24px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-    .why-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
+      padding: 0;
     }
     .why-card-icon {
       width: 44px;
@@ -762,10 +752,8 @@
     .form-group label {
       font-family: var(--font-display);
       font-weight: 500;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.7);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.8);
     }
     .form-group label .required { color: var(--red); }
     .form-group input,
@@ -992,9 +980,7 @@
     .stat-label {
       font-size: 0.8rem;
       font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.75);
     }
     .stat-divider {
       width: 1px;
@@ -1324,25 +1310,21 @@
         <a href="#services" class="hero-scroll-link">See Our Services <i data-lucide="chevron-down"></i></a>
       </div>
     </div>
-    <div class="scroll-hint">
-      <i data-lucide="chevrons-down"></i>
-    </div>
   </section>
 
   <!-- Trust Bar -->
   <div class="trust-bar" data-aos="fade-up" data-aos-duration="600">
     <div class="trust-bar-inner">
-      <div class="trust-item"><i data-lucide="award"></i> AHA Heartsaver courses</div>
-      <div class="trust-item"><i data-lucide="shield-check"></i> Texas-Compliant Training</div>
-      <div class="trust-item"><i data-lucide="stethoscope"></i> Licensed Paramedic Instructor</div>
-      <div class="trust-item"><i data-lucide="building"></i> On-Site at Your Location</div>
+      <div class="trust-item">AHA Heartsaver courses</div>
+      <div class="trust-item">Texas-Compliant Training</div>
+      <div class="trust-item">Licensed Paramedic Instructor</div>
+      <div class="trust-item">On-Site at Your Location</div>
     </div>
   </div>
 
   <!-- Services -->
   <section class="section services" id="services">
     <div class="section-inner">
-      <p class="section-label" data-aos="fade-up">What We Offer</p>
       <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Services</h2>
       <p class="services-intro" data-aos="fade-up" data-aos-delay="100">
         <strong>Hands-on CPR certification and emergency preparedness from one trusted provider, with deep roots in childcare.</strong>
@@ -1352,27 +1334,24 @@
       <div class="services-grid">
         <!-- CPR Card -->
         <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-card-icon blue"><i data-lucide="heart-pulse"></i></div>
           <h3>CPR, AED &amp; First Aid Certification</h3>
           <p>The American Heart Association Heartsaver First Aid CPR AED course, adult and pediatric as applicable, taught as a private class at your location for childcare teams, churches, youth sports, families, businesses and community groups.</p>
           <ul>
             <li>Infant and pediatric CPR/AED</li>
             <li>Adult CPR/AED</li>
-            <li>Heartsaver CPR/AED Certification -- meets Texas childcare licensing requirements</li>
+            <li>Heartsaver CPR/AED Certification: meets Texas childcare licensing requirements</li>
             <li>Basic first aid principles</li>
             <li>Hands-on instruction using professional CPR manikins and equipment</li>
             <li>Participants who successfully complete training receive their AHA course completion eCard electronically following completion and processing.</li>
           </ul>
           <div class="pricing">$85 per participant <span>| 4-person minimum, including the course, materials and eCard.</span></div>
           <div class="compliance-callout">
-            <i data-lucide="alert-triangle"></i>
             <p><strong>Did you know?</strong> Online-only CPR courses do not meet Texas childcare licensing requirements. Texas mandates hands-on training with manikins. ReadyNest training is fully in-person, exactly as the state requires.</p>
           </div>
         </div>
 
         <!-- Emergency Prep Card -->
         <div class="service-card card-gold" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-card-icon gold"><i data-lucide="clipboard-check"></i></div>
           <h3>Emergency Preparedness Planning</h3>
           <p>Custom emergency preparedness plans and consulting for childcare programs and other organizations. Texas requires every childcare operation to have a written emergency preparedness plan, and inspectors check for it. We help you get it done right.</p>
           <p class="frameworks-quote">Our preparedness planning combines real-world emergency response experience with nationally recognized emergency management frameworks used by first responders.</p>
@@ -1413,37 +1392,30 @@
   <!-- Why ReadyNest -->
   <section class="section why-section" id="why">
     <div class="section-inner">
-      <p class="section-label" data-aos="fade-up">The Difference</p>
       <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Why Childcare Centers Choose ReadyNest</h2>
 
       <div class="why-grid">
         <div class="why-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="why-card-icon icon-red"><i data-lucide="siren"></i></div>
           <h3>Real Emergency Experience</h3>
           <p>Your instructor is a licensed paramedic and Field Training Officer who has responded to real emergencies for years. This is field-tested expertise, not textbook knowledge.</p>
         </div>
         <div class="why-card" data-aos="fade-up" data-aos-delay="150">
-          <div class="why-card-icon"><i data-lucide="baby"></i></div>
           <h3>Built From Inside Childcare</h3>
           <p>Our co-founder is a preschool director who deals with the same staffing, scheduling, and compliance challenges you do. We designed this training for your reality, not a generic audience.</p>
         </div>
         <div class="why-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="why-card-icon icon-gold"><i data-lucide="target"></i></div>
           <h3>Training for What Actually Happens</h3>
           <p>Infant choking. Playground falls. Allergic reactions. Febrile seizures. Our training covers the scenarios your staff actually faces in childcare settings, not just generic adult CPR.</p>
         </div>
         <div class="why-card" data-aos="fade-up" data-aos-delay="250">
-          <div class="why-card-icon icon-red"><i data-lucide="shield-check"></i></div>
           <h3>Hands-On. In-Person. Texas-Compliant.</h3>
           <p>Professional instruction using CPR manikins and AED trainers. Meets all Texas childcare licensing requirements for hands-on skills training. Online-only courses do not qualify. Ours do.</p>
         </div>
         <div class="why-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="why-card-icon"><i data-lucide="calendar-check"></i></div>
           <h3>Get Everyone Trained Without Shutting Down</h3>
           <p>We work around your operations. Training during in-service days, evenings, or weekends. Split sessions available so you can keep classrooms covered and ratios intact.</p>
         </div>
         <div class="why-card" data-aos="fade-up" data-aos-delay="350">
-          <div class="why-card-icon icon-gold"><i data-lucide="map-pin"></i></div>
           <h3>We Come to You</h3>
           <p>On-site training at your facility. No travel for your staff, no coverage gaps, no disruption to your day. We set up, train, and leave you with certified team members.</p>
         </div>
@@ -1479,7 +1451,6 @@
   <!-- About -->
   <section class="section about" id="about">
     <div class="section-inner">
-      <p class="section-label" data-aos="fade-up">Our Story</p>
       <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">About ReadyNest</h2>
 
       <div class="about-grid">
@@ -1505,15 +1476,14 @@
   <section class="section service-area" id="area">
     <div class="section-inner">
       <div class="service-area-content">
-        <p class="section-label" data-aos="fade-up">Where We Serve</p>
         <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">We Specialize in Supporting Childcare Providers Across Greater Houston</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">On-site training available for childcare centers, schools, and community organizations throughout:</p>
 
         <div class="area-tags" data-aos="fade-up" data-aos-delay="150">
-          <div class="area-tag"><i data-lucide="map-pin"></i> Katy</div>
-          <div class="area-tag"><i data-lucide="map-pin"></i> Cypress</div>
-          <div class="area-tag"><i data-lucide="map-pin"></i> West Houston</div>
-          <div class="area-tag"><i data-lucide="map-pin"></i> Greater Houston Area</div>
+          <div class="area-tag">Katy</div>
+          <div class="area-tag">Cypress</div>
+          <div class="area-tag">West Houston</div>
+          <div class="area-tag">Greater Houston Area</div>
         </div>
 
         <a href="#contact" class="btn btn-primary btn-large" data-aos="fade-up" data-aos-delay="200">Schedule Training</a>
@@ -1525,9 +1495,8 @@
   <section class="contact" id="contact">
     <div id="vanta-contact"></div>
     <div class="contact-inner">
-      <p class="section-label" data-aos="fade-up">Get Started</p>
       <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Ready to Train Your Team?</h2>
-      <p class="contact-body" data-aos="fade-up" data-aos-delay="100">Fill out the form below and we will get back to you within one business day to schedule your training. No obligation -- we will simply help you schedule training that works best for your team.</p>
+      <p class="contact-body" data-aos="fade-up" data-aos-delay="100">Fill out the form below and we will get back to you within one business day to schedule your training. No obligation. We will simply help you schedule training that works best for your team.</p>
 
       <form class="contact-form" data-aos="fade-up" data-aos-delay="150" action="https://formspree.io/f/xjgagkaa" method="POST">
         <div class="form-grid">
@@ -1606,8 +1575,8 @@
           <a href="mailto:info@readynestsafety.com"><i data-lucide="mail"></i> info@readynestsafety.com</a>
         </div>
         <div class="footer-trust">
-          <div class="footer-trust-item"><i data-lucide="award"></i> American Heart Association Training</div>
-          <div class="footer-trust-item"><i data-lucide="badge-check"></i> Aligned with Texas Child Care Regulation Requirements</div>
+          <div class="footer-trust-item">American Heart Association Training</div>
+          <div class="footer-trust-item">Aligned with Texas Child Care Regulation Requirements</div>
         </div>
       </div>
       <hr class="footer-divider">
