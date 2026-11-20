@@ -13,10 +13,32 @@
   <meta property="og:image" content="https://readynestsafety.com/assets/og-image-2026-11.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://readynestsafety.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ReadyNest Safety Training">
   <meta name="twitter:description" content="CPR, First Aid & Emergency Preparedness for childcare providers, churches, youth sports, families, businesses and community groups across Greater Houston.">
   <meta name="twitter:image" content="https://readynestsafety.com/assets/og-image-2026-11.png">
+
+  <link rel="canonical" href="https://readynestsafety.com/">
+  <meta name="theme-color" content="#1A3D6D">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ReadyNest Safety Training",
+    "legalName": "Safe Nest Preparedness Solutions LLC",
+    "url": "https://readynestsafety.com/",
+    "logo": "https://readynestsafety.com/assets/full-color-primary.png",
+    "image": "https://readynestsafety.com/assets/og-image-2026-11.png",
+    "telephone": "+1-346-626-0121",
+    "email": "info@readynestsafety.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Katy", "addressRegion": "TX", "addressCountry": "US" },
+    "areaServed": ["Katy, TX", "Cypress, TX", "West Houston, TX", "Greater Houston, TX"],
+    "description": "Hands-on American Heart Association Heartsaver First Aid CPR AED training and emergency preparedness planning, taught on site across Greater Houston."
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -68,29 +90,6 @@
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
-
-    /* ===== FILM GRAIN ===== */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.025;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-
-    /* ===== SCROLL PROGRESS BAR ===== */
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: var(--red);
-      z-index: 10001;
-      width: 0%;
-      transition: width 0.1s linear;
-    }
 
     /* ===== NAV ===== */
     .nav {
@@ -241,9 +240,9 @@
       height: 100%;
       background: linear-gradient(
         180deg,
-        rgba(26, 61, 109, 0.75) 0%,
-        rgba(43, 87, 151, 0.65) 50%,
-        rgba(26, 61, 109, 0.8) 100%
+        rgba(26, 61, 109, 0.66) 0%,
+        rgba(26, 61, 109, 0.56) 50%,
+        rgba(26, 61, 109, 0.74) 100%
       );
     }
     .hero-content {
@@ -707,18 +706,11 @@
     }
     .area-tag i, .area-tag svg { width: 16px; height: 16px; color: var(--gold); }
 
-    /* ===== CONTACT / VANTA ===== */
+    /* ===== CONTACT ===== */
     .contact {
       position: relative;
       padding: 96px 24px;
       overflow: hidden;
-    }
-    #vanta-contact {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
     }
     .contact-inner {
       position: relative;
@@ -919,75 +911,6 @@
       opacity: 0.4;
     }
 
-    /* ===== CUSTOM CURSOR (desktop only) ===== */
-    .cursor-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--red);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 99999;
-      transition: transform 0.15s ease;
-      mix-blend-mode: normal;
-    }
-    .cursor-ring {
-      width: 36px;
-      height: 36px;
-      border: 2px solid rgba(43, 87, 151, 0.3);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 99998;
-      transition: transform 0.25s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
-      transform: translate(-14px, -14px);
-    }
-    .cursor-ring.hover {
-      width: 52px;
-      height: 52px;
-      border-color: rgba(230, 57, 70, 0.4);
-      transform: translate(-22px, -22px);
-    }
-
-    /* ===== STAT COUNTER ===== */
-    .stats-bar {
-      background: var(--navy);
-      padding: 48px 24px;
-    }
-    .stats-bar-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-around;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-    .stat-item {
-      text-align: center;
-      min-width: 160px;
-    }
-    .stat-number {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 2rem;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-    .stat-number .stat-suffix {
-      font-size: 1.2rem;
-      color: var(--gold);
-    }
-    .stat-label {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.75);
-    }
-    .stat-divider {
-      width: 1px;
-      background: rgba(255,255,255,0.12);
-      align-self: stretch;
-    }
-
     /* ===== FORM SUCCESS STATE ===== */
     .form-success {
       text-align: center;
@@ -1121,7 +1044,7 @@
       .hero { height: 700px; min-height: 0; }
       .hero h1 { font-size: clamp(1.75rem, 6vw, 2.2rem); }
       .hero-content { padding: 80px 20px 60px; }
-      .hero-body { display: none; }
+      .hero-body { font-size: 0.95rem; margin-bottom: 28px; }
       .hero-scroll-link { display: none !important; }
 
       /* Touch targets -- min 44px */
@@ -1177,11 +1100,6 @@
       .contact-form { padding: 24px 20px; }
 
       /* Stats bar */
-      .stats-bar { padding: 40px 20px; }
-      .stats-bar-inner { gap: 20px; justify-content: center; }
-      .stat-item { min-width: 130px; }
-      .stat-number { font-size: 1.5rem; }
-      .stat-divider { display: none; }
 
       /* Prep pricing */
       .prep-pricing { flex-direction: column; }
@@ -1206,13 +1124,10 @@
       .footer-contact-info a { padding: 10px 0; min-height: 44px; }
 
       /* Custom cursor -- hidden */
-      .cursor-dot, .cursor-ring { display: none; }
 
       /* Back to top -- avoid overlap with page edge */
       .back-to-top { bottom: 20px; right: 20px; }
 
-      /* Vanta contact -- reduce min height */
-      #vanta-contact { min-height: 400px; }
     }
 
     /* ===== 2026-11 POLISH (focused update) ===== */
@@ -1238,19 +1153,36 @@
     .who-we-serve { text-align: center; margin: 8px auto 0; }
     .who-we-serve-title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--navy); margin-bottom: 16px; }
     .who-we-serve-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 0; }
-    .who-we-serve-list li { background: var(--white); border: 1px solid var(--light-gray); border-radius: 999px; padding: 8px 18px; font-size: 0.9rem; font-weight: 500; color: var(--navy); }
-    .who-we-serve-list li.primary { background: rgba(43, 87, 151, 0.08); border-color: rgba(43, 87, 151, 0.25); font-weight: 600; }
+    .who-we-serve-list { gap: 6px 28px; }
+    .who-we-serve-list li { font-size: 1rem; font-weight: 500; color: var(--navy); }
+    .who-we-serve-list li.primary { font-weight: 700; }
     /* Form details */
     .form-group label .optional { color: var(--gray); font-weight: 400; font-size: 0.8em; }
     .contact .form-group label .optional { color: rgba(255,255,255,0.65); }
     .form-note { margin-top: 14px; font-size: 0.85rem; color: rgba(255,255,255,0.75); text-align: center; }
-    /* Contact keeps its navy ground if the animated background fails to load */
     .contact { background: var(--navy); }
     /* Footer disclaimer */
     .footer-disclaimer { margin-top: 20px; font-size: 0.75rem; line-height: 1.6; color: rgba(255,255,255,0.62); max-width: 860px; }
     @media (max-width: 768px) {
       .services-grid { grid-template-columns: 1fr; }
     }
+    /* 2026-11 technical pass */
+    .skip-link { position: absolute; left: 16px; top: -48px; z-index: 10002; background: var(--white); color: var(--navy); padding: 10px 16px; border-radius: var(--radius-sm); font-weight: 600; }
+    .skip-link:focus { top: 12px; }
+    a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    /* Content stays visible if the animation library fails to load */
+    html:not(.aos-ready) [data-aos] { opacity: 1 !important; transform: none !important; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      [data-aos] { opacity: 1 !important; transform: none !important; }
+    }
+    .area-tag { background: none; border: none; padding: 4px 0; font-size: 1.05rem; }
+    .area-tag:hover { background: none; }
+    .area-tags { gap: 6px 32px; }
+    .form-group textarea { min-height: 96px; resize: vertical; font: inherit; }
+    .form-error { margin-top: 14px; color: #FFD6D9; text-align: center; font-size: 0.9rem; }
+    .btn-submit[disabled] { opacity: 0.7; cursor: progress; }
+    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
     @media (max-width: 420px) {
       .nav-logo { font-size: 1rem; white-space: nowrap; }
       .nav-logo-img { width: 30px; height: 30px; }
@@ -1259,17 +1191,12 @@
 </head>
 <body>
 
-  <!-- Custom Cursor -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- Scroll Progress -->
-  <div class="scroll-progress" id="scrollProgress"></div>
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- Nav -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">
+      <a href="#hero" class="nav-logo">
         <img src="assets/full-color-icon.png" alt="ReadyNest Safety Training logo" class="nav-logo-img">
         ReadyNest Safety Training
       </a>
@@ -1279,17 +1206,17 @@
         <a href="#about">About</a>
         <a href="#area">Service Area</a>
         <a href="#contact">Contact</a>
-        <a href="#contact" class="btn btn-primary nav-menu-cta">Schedule Training</a>
+        <a href="#contact" class="btn btn-primary nav-menu-cta">Request Training</a>
       </div>
       <div class="nav-actions">
         <a href="tel:+13466260121" class="nav-phone" id="navPhone">
-          <i data-lucide="phone"></i>
+          <svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>(346) 626-0121</span>
         </a>
-        <a href="#contact" class="btn btn-primary">Schedule Training</a>
+        <a href="#contact" class="btn btn-primary">Request Training</a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
       </button>
     </div>
   </nav>
@@ -1297,8 +1224,9 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <video class="hero-video" autoplay muted loop playsinline preload="metadata"
-      poster="assets/pexels-hero-poster.jpg">
-      <source src="assets/hero-video.mp4" type="video/mp4">
+      poster="assets/hero-class-poster.jpg" aria-hidden="true">
+      <source src="assets/hero-class-1080.mp4" type="video/mp4" media="(min-width: 1025px)">
+      <source src="assets/hero-class-720.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
@@ -1306,17 +1234,18 @@
       <p class="hero-sub">Professional, hands-on certification training and emergency preparedness services for childcare centers &amp; providers, churches, youth sports, families, businesses, and community groups throughout Greater Houston.</p>
       <p class="hero-body">Founded by a licensed paramedic and a preschool director, we bring hands-on safety training directly to your location across Greater Houston.</p>
       <div class="hero-cta-group">
-        <a href="#contact" class="btn btn-primary btn-hero">Schedule Training</a>
-        <a href="#services" class="hero-scroll-link">See Our Services <i data-lucide="chevron-down"></i></a>
+        <a href="#contact" class="btn btn-primary btn-hero">Request Training</a>
+        <a href="#services" class="hero-scroll-link">See Our Services <svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></a>
       </div>
     </div>
   </section>
 
+  <main id="main">
   <!-- Trust Bar -->
   <div class="trust-bar" data-aos="fade-up" data-aos-duration="600">
     <div class="trust-bar-inner">
       <div class="trust-item">AHA Heartsaver courses</div>
-      <div class="trust-item">Texas-Compliant Training</div>
+      <div class="trust-item">Built for Texas Childcare CPR Rules</div>
       <div class="trust-item">Licensed Paramedic Instructor</div>
       <div class="trust-item">On-Site at Your Location</div>
     </div>
@@ -1339,14 +1268,14 @@
           <ul>
             <li>Infant and pediatric CPR/AED</li>
             <li>Adult CPR/AED</li>
-            <li>Heartsaver CPR/AED Certification: meets Texas childcare licensing requirements</li>
+            <li>Skills practice and testing, as Texas childcare licensing requires</li>
             <li>Basic first aid principles</li>
             <li>Hands-on instruction using professional CPR manikins and equipment</li>
             <li>Participants who successfully complete training receive their AHA course completion eCard electronically following completion and processing.</li>
           </ul>
           <div class="pricing">$85 per participant <span>| 4-person minimum, including the course, materials and eCard.</span></div>
           <div class="compliance-callout">
-            <p><strong>Did you know?</strong> Online-only CPR courses do not meet Texas childcare licensing requirements. Texas mandates hands-on training with manikins. ReadyNest training is fully in-person, exactly as the state requires.</p>
+            <p><strong>Did you know?</strong> Online-only CPR courses do not meet Texas childcare licensing requirements. Texas mandates hands-on training with manikins. ReadyNest training is fully in-person and hands-on.</p>
           </div>
         </div>
 
@@ -1378,7 +1307,7 @@
       </div>
 
       <div class="services-cta" data-aos="fade-up">
-        <a href="#contact" class="btn btn-primary btn-large">Schedule Training</a>
+        <a href="#contact" class="btn btn-primary btn-large">Request Training</a>
       </div>
     </div>
   </section>
@@ -1409,7 +1338,7 @@
         </div>
         <div class="why-card" data-aos="fade-up" data-aos-delay="250">
           <h3>Hands-On. In-Person. Texas-Compliant.</h3>
-          <p>Professional instruction using CPR manikins and AED trainers. Meets all Texas childcare licensing requirements for hands-on skills training. Online-only courses do not qualify. Ours do.</p>
+          <p>Professional instruction using CPR manikins and AED trainers. Meets the Texas childcare licensing requirement for hands-on CPR skills practice and testing. Online-only courses do not qualify.</p>
         </div>
         <div class="why-card" data-aos="fade-up" data-aos-delay="300">
           <h3>Get Everyone Trained Without Shutting Down</h3>
@@ -1417,36 +1346,11 @@
         </div>
         <div class="why-card" data-aos="fade-up" data-aos-delay="350">
           <h3>We Come to You</h3>
-          <p>On-site training at your facility. No travel for your staff, no coverage gaps, no disruption to your day. We set up, train, and leave you with certified team members.</p>
+          <p>On-site training at your facility. No travel for your staff, no coverage gaps, no disruption to your day. We set up, train, and leave you with trained team members.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Stats Bar -->
-  <div class="stats-bar">
-    <div class="stats-bar-inner" data-aos="fade-up">
-      <div class="stat-item">
-        <div class="stat-number">On-Site</div>
-        <div class="stat-label">At Your Location</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-number">AHA</div>
-        <div class="stat-label">Heartsaver Courses</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-number">AHA eCards</div>
-        <div class="stat-label">Issued Electronically</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-number">100<span class="stat-suffix">%</span></div>
-        <div class="stat-label">Texas Compliant</div>
-      </div>
-    </div>
-  </div>
 
   <!-- About -->
   <section class="section about" id="about">
@@ -1455,7 +1359,7 @@
 
       <div class="about-grid">
         <div class="about-photo" data-aos="fade-right" data-aos-duration="700">
-          <img src="assets/founders_photo.png" alt="Stephanie and Sharief Zahra, founders of ReadyNest Safety Training">
+          <img src="assets/founders-photo.jpg" width="1200" height="800" loading="lazy" alt="Stephanie and Sharief Zahra, founders of ReadyNest Safety Training">
         </div>
         <div class="about-text" data-aos="fade-left" data-aos-duration="700">
           <p>ReadyNest Safety was founded by a husband-and-wife team committed to improving safety in childcare environments.</p>
@@ -1486,14 +1390,13 @@
           <div class="area-tag">Greater Houston Area</div>
         </div>
 
-        <a href="#contact" class="btn btn-primary btn-large" data-aos="fade-up" data-aos-delay="200">Schedule Training</a>
+        <a href="#contact" class="btn btn-primary btn-large" data-aos="fade-up" data-aos-delay="200">Request Training</a>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
   <section class="contact" id="contact">
-    <div id="vanta-contact"></div>
     <div class="contact-inner">
       <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Ready to Train Your Team?</h2>
       <p class="contact-body" data-aos="fade-up" data-aos-delay="100">Fill out the form below and we will get back to you within one business day to schedule your training. No obligation. We will simply help you schedule training that works best for your team.</p>
@@ -1501,20 +1404,24 @@
       <form class="contact-form" data-aos="fade-up" data-aos-delay="150" action="https://formspree.io/f/xjgagkaa" method="POST">
         <div class="form-grid">
           <div class="form-group">
-            <label>Name <span class="required">*</span></label>
-            <input type="text" name="name" required placeholder="Your name">
+            <label for="f-name">Name <span class="required">*</span></label>
+            <input id="f-name" type="text" name="name" required autocomplete="name" placeholder="Your name">
           </div>
           <div class="form-group">
-            <label>Organization <span class="optional">(optional)</span></label>
-            <input type="text" name="organization" placeholder="Organization, if any">
+            <label for="f-org">Organization <span class="optional">(optional)</span></label>
+            <input id="f-org" type="text" name="organization" autocomplete="organization" placeholder="Organization, if any">
           </div>
           <div class="form-group">
-            <label>Email <span class="required">*</span></label>
-            <input type="email" name="email" required placeholder="your@email.com">
+            <label for="f-email">Email <span class="required">*</span></label>
+            <input id="f-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com">
           </div>
           <div class="form-group">
-            <label>Service Needed <span class="required">*</span></label>
-            <select name="service" required>
+            <label for="f-phone">Phone <span class="optional">(optional)</span></label>
+            <input id="f-phone" type="tel" name="phone" autocomplete="tel" placeholder="Best number for a callback">
+          </div>
+          <div class="form-group">
+            <label for="f-service">Service Needed <span class="required">*</span></label>
+            <select id="f-service" name="service" required>
               <option value="" disabled selected>Select a service</option>
               <option value="CPR, AED & First Aid Certification">CPR, AED &amp; First Aid Certification</option>
               <option value="Emergency Preparedness Planning">Emergency Preparedness Planning</option>
@@ -1522,24 +1429,26 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Number of Participants <span class="required">*</span></label>
-            <input type="number" name="group_size" required placeholder="4 or more for CPR classes" min="1">
+            <label for="f-size">Number of Participants <span class="required">*</span></label>
+            <input id="f-size" type="number" inputmode="numeric" name="group_size" required placeholder="4 or more for CPR classes" min="1">
           </div>
           <div class="form-group">
-            <label>City <span class="required">*</span></label>
-            <input type="text" name="city" required placeholder="e.g. Katy">
+            <label for="f-city">City <span class="required">*</span></label>
+            <input id="f-city" type="text" name="city" required autocomplete="address-level2" placeholder="e.g. Katy">
           </div>
           <div class="form-group">
-            <label>Preferred Dates</label>
-            <input type="text" name="preferred_dates" placeholder="Dates or days that work for you">
+            <label for="f-dates">Preferred Dates</label>
+            <input id="f-dates" type="text" name="preferred_dates" placeholder="Dates or days that work for you">
           </div>
-          <div class="form-group">
-            <label>Message</label>
-            <input type="text" name="message" placeholder="Anything else we should know?">
+          <div class="form-group full">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" rows="3" placeholder="Anything else we should know?"></textarea>
           </div>
         </div>
+        <div class="hp-field" aria-hidden="true"><label for="f-gotcha">Leave this field empty</label><input id="f-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
         <div class="form-submit">
           <button type="submit" class="btn-submit">Request Training</button>
+          <p class="form-error" id="formError" role="alert" hidden>Something went wrong sending your request. Please call (346) 626-0121 or email info@readynestsafety.com.</p>
           <p class="form-note">All training and consulting is scheduled by request and subject to availability.</p>
         </div>
       </form>
@@ -1547,17 +1456,19 @@
       <div class="contact-alt" data-aos="fade-up" data-aos-delay="200">
         <p>Prefer to reach us directly?</p>
         <div class="contact-alt-links">
-          <a href="tel:+13466260121"><i data-lucide="phone"></i> (346) 626-0121</a>
+          <a href="tel:+13466260121"><svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (346) 626-0121</a>
           <span class="sep">|</span>
-          <a href="mailto:info@readynestsafety.com"><i data-lucide="mail"></i> info@readynestsafety.com</a>
+          <a href="mailto:info@readynestsafety.com"><svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> info@readynestsafety.com</a>
         </div>
       </div>
     </div>
   </section>
 
+  </main>
+
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i data-lucide="chevron-up"></i>
+    <svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
   <!-- Footer -->
@@ -1571,8 +1482,8 @@
           <p>Katy, Texas</p>
         </div>
         <div class="footer-contact-info">
-          <a href="tel:+13466260121"><i data-lucide="phone"></i> (346) 626-0121</a>
-          <a href="mailto:info@readynestsafety.com"><i data-lucide="mail"></i> info@readynestsafety.com</a>
+          <a href="tel:+13466260121"><svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (346) 626-0121</a>
+          <a href="mailto:info@readynestsafety.com"><svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> info@readynestsafety.com</a>
         </div>
         <div class="footer-trust">
           <div class="footer-trust-item">American Heart Association Training</div>
@@ -1589,44 +1500,22 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script defer src="https://unpkg.com/lucide@latest"></script>
 
   <script>
     // ===== Init =====
     document.addEventListener('DOMContentLoaded', () => {
-      // Lucide Icons
-      lucide.createIcons();
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      // AOS
-      AOS.init({
-        once: true,
-        duration: 600,
-        easing: 'ease-out-cubic',
-        offset: 60,
-      });
-
-      // Vanta NET on contact section
-      if (window.VANTA) {
-        const isMobileVanta = window.innerWidth <= 768;
-        VANTA.NET({
-          el: '#vanta-contact',
-          mouseControls: !isMobileVanta,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: isMobileVanta ? 400 : 600,
-          minWidth: 200,
-          scale: 1.0,
-          scaleMobile: 0.8,
-          color: 0x2B5797,
-          backgroundColor: 0x1A3D6D,
-          points: isMobileVanta ? 5 : 8,
-          maxDistance: isMobileVanta ? 18 : 22,
-          spacing: isMobileVanta ? 22 : 18,
-          showDots: true,
+      // AOS (content stays visible if it fails to load)
+      if (window.AOS && !reduceMotion) {
+        AOS.init({
+          once: true,
+          duration: 600,
+          easing: 'ease-out-cubic',
+          offset: 60,
         });
+        document.documentElement.classList.add('aos-ready');
       }
 
       // ===== Nav scroll state =====
@@ -1635,47 +1524,35 @@
         nav.classList.toggle('scrolled', window.scrollY > 50);
       });
 
-      // ===== Scroll Progress =====
-      const progressBar = document.getElementById('scrollProgress');
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        progressBar.style.width = scrollPercent + '%';
-      });
-
       // ===== Mobile Nav Toggle =====
       const navToggle = document.getElementById('navToggle');
       const navLinks = document.getElementById('navLinks');
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = navToggle.querySelector('i, svg');
-        if (icon) {
-          icon.setAttribute('data-lucide', navLinks.classList.contains('active') ? 'x' : 'menu');
-          lucide.createIcons();
-        }
-      });
+      const MENU_SVG = '<svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>';
+      const CLOSE_SVG = '<svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+      const setMenu = (open) => {
+        navLinks.classList.toggle('active', open);
+        navToggle.innerHTML = open ? CLOSE_SVG : MENU_SVG;
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('active')));
 
       // Close mobile nav on link click
       navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-          const icon = navToggle.querySelector('i, svg');
-          if (icon) {
-            icon.setAttribute('data-lucide', 'menu');
-            lucide.createIcons();
-          }
-        });
+        link.addEventListener('click', () => setMenu(false));
       });
 
       // ===== Hero video IntersectionObserver =====
       const heroVideo = document.querySelector('.hero-video');
-      if (heroVideo) {
+      if (heroVideo && reduceMotion) {
+        heroVideo.removeAttribute('autoplay');
+        heroVideo.pause();
+      } else if (heroVideo) {
         heroVideo.addEventListener('playing', () => heroVideo.classList.add('playing'), { once: true });
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              heroVideo.play();
+              heroVideo.play().catch(() => {});
             } else {
               heroVideo.pause();
             }
@@ -1688,9 +1565,10 @@
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
+          const href = this.getAttribute('href');
+          const target = href.length > 1 ? document.getElementById(href.slice(1)) : null;
           if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+            target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
           }
         });
       });
@@ -1714,7 +1592,7 @@
         });
       });
 
-      // cta_schedule_training (all Schedule Training buttons)
+      // cta_schedule_training (all Request Training buttons; event name kept for report continuity)
       document.querySelectorAll('.btn-primary, .btn-hero, .btn-submit').forEach(el => {
         el.addEventListener('click', () => {
           if (typeof gtag === 'function') {
@@ -1722,38 +1600,6 @@
           }
         });
       });
-
-      // ===== Custom Cursor (desktop only) =====
-      const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
-      if (!isMobile) {
-        const dot = document.getElementById('cursorDot');
-        const ring = document.getElementById('cursorRing');
-        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-          dot.style.left = mouseX - 4 + 'px';
-          dot.style.top = mouseY - 4 + 'px';
-        });
-
-        function animateRing() {
-          ringX += (mouseX - ringX) * 0.15;
-          ringY += (mouseY - ringY) * 0.15;
-          ring.style.left = ringX - 18 + 'px';
-          ring.style.top = ringY - 18 + 'px';
-          requestAnimationFrame(animateRing);
-        }
-        animateRing();
-
-        document.querySelectorAll('a, button, .service-card, .why-card').forEach(el => {
-          el.addEventListener('mouseenter', () => ring.classList.add('hover'));
-          el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
-        });
-
-        document.body.style.cursor = 'none';
-        document.querySelectorAll('a, button').forEach(el => el.style.cursor = 'none');
-      }
 
       // ===== Nav Active State =====
       const sections = document.querySelectorAll('section[id]');
@@ -1773,8 +1619,13 @@
       // ===== Form Success State =====
       const contactForm = document.querySelector('.contact-form');
       if (contactForm) {
+        const formError = document.getElementById('formError');
+        const submitBtn = contactForm.querySelector('.btn-submit');
         contactForm.addEventListener('submit', function(e) {
           e.preventDefault();
+          formError.hidden = true;
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
           const formData = new FormData(this);
 
           fetch(this.action, {
@@ -1782,25 +1633,28 @@
             body: formData,
             headers: { 'Accept': 'application/json' }
           }).then(response => {
-            if (response.ok) {
-              this.style.display = 'none';
-              const success = document.createElement('div');
-              success.className = 'form-success';
-              success.innerHTML = `
-                <div class="form-success-icon"><i data-lucide="check-circle"></i></div>
-                <h3>Thank You!</h3>
-                <p>We received your request and will get back to you within one business day to schedule your training.</p>
-              `;
-              this.parentNode.insertBefore(success, this.nextSibling);
-              lucide.createIcons();
+            if (!response.ok) throw new Error('status ' + response.status);
+            this.style.display = 'none';
+            const success = document.createElement('div');
+            success.className = 'form-success';
+            success.setAttribute('role', 'status');
+            success.innerHTML = `
+              <div class="form-success-icon"><svg class="lucide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+              <h3>Thank you</h3>
+              <p>We received your request and will get back to you within one business day to schedule your training.</p>
+            `;
+            this.parentNode.insertBefore(success, this.nextSibling);
 
-              if (typeof gtag === 'function') {
-                gtag('event', 'generate_lead', {
-                  event_category: 'conversion',
-                  event_label: 'contact_form'
-                });
-              }
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', {
+                event_category: 'conversion',
+                event_label: 'contact_form'
+              });
             }
+          }).catch(() => {
+            formError.hidden = false;
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Request Training';
           });
         });
       }
@@ -1814,30 +1668,6 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // ===== Stat Counter Animation =====
-      const statNumbers = document.querySelectorAll('[data-count]');
-      if (statNumbers.length) {
-        const countObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const el = entry.target;
-              const target = parseInt(el.getAttribute('data-count'));
-              let current = 0;
-              const step = Math.ceil(target / 30);
-              const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                  current = target;
-                  clearInterval(timer);
-                }
-                el.textContent = current;
-              }, 40);
-              countObserver.unobserve(el);
-            }
-          });
-        }, { threshold: 0.5 });
-        statNumbers.forEach(el => countObserver.observe(el));
-      }
     });
   </script>
 
