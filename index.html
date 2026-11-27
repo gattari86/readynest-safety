@@ -98,14 +98,17 @@
       left: 0;
       right: 0;
       z-index: 10000;
-      background: rgba(245, 245, 240, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      /* Light glass: the page's ivory as a translucent tint over the hero footage */
+      background: rgba(245, 245, 240, 0.80);
+      backdrop-filter: blur(14px) saturate(1.25);
+      -webkit-backdrop-filter: blur(14px) saturate(1.25);
+      border-bottom: 1px solid rgba(26, 61, 109, 0.10);
       transition: var(--transition);
     }
-    .nav.scrolled {
-      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    .nav.scrolled { background: rgba(245, 245, 240, 0.86); }
+    .nav.menu-open { background: var(--bg); }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .nav, .nav.scrolled { background: rgba(245, 245, 240, 0.96); }
     }
     .nav-inner {
       max-width: 1200px;
@@ -137,7 +140,7 @@
       font-size: 0.875rem;
       font-weight: 500;
       color: var(--text);
-      opacity: 0.7;
+      opacity: 0.88;
       transition: var(--transition);
       position: relative;
     }
@@ -167,7 +170,7 @@
       font-size: 0.875rem;
       font-weight: 500;
       color: var(--accent);
-      opacity: 0.8;
+      opacity: 1;
       transition: var(--transition);
     }
     .nav-phone:hover { opacity: 1; }
@@ -229,10 +232,28 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.6s ease;
     }
-    .hero-video.playing { opacity: 1; }
+    /* Discreet play/pause for the background footage (shown once the script runs) */
+    .hero-play {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      z-index: 3;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: rgba(26, 61, 109, 0.35);
+      color: var(--white);
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s ease, background 0.2s ease;
+    }
+    .hero-play:hover, .hero-play:focus-visible { opacity: 1; background: rgba(26, 61, 109, 0.6); }
+    .hero-play svg { width: 16px; height: 16px; }
     .hero-overlay {
       position: absolute;
       top: 0; left: 0;
@@ -1229,6 +1250,7 @@
       <source src="assets/hero-class-720.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
+    <button class="hero-play" id="heroPlay" type="button" aria-label="Play background video" hidden></button>
     <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
       <h1>CPR, First Aid & Emergency Preparedness for Our Communities</h1>
       <p class="hero-sub">Professional, hands-on certification training and emergency preparedness services for childcare centers &amp; providers, churches, youth sports, families, businesses, and community groups throughout Greater Houston.</p>
@@ -1534,6 +1556,7 @@
         navToggle.innerHTML = open ? CLOSE_SVG : MENU_SVG;
         navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        nav.classList.toggle('menu-open', open);
       };
       navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('active')));
 
@@ -1542,23 +1565,44 @@
         link.addEventListener('click', () => setMenu(false));
       });
 
-      // ===== Hero video IntersectionObserver =====
+      // ===== Hero video =====
+      // The poster is always visible as the still frame; the footage plays silently inline when the
+      // browser allows it. If autoplay is refused (Low Power Mode, data saver) or the visitor prefers
+      // reduced motion, the still stays and the play control offers playback.
       const heroVideo = document.querySelector('.hero-video');
-      if (heroVideo && reduceMotion) {
-        heroVideo.removeAttribute('autoplay');
-        heroVideo.pause();
-      } else if (heroVideo) {
-        heroVideo.addEventListener('playing', () => heroVideo.classList.add('playing'), { once: true });
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              heroVideo.play().catch(() => {});
-            } else {
-              heroVideo.pause();
-            }
-          });
-        }, { threshold: 0.25 });
-        observer.observe(heroVideo);
+      const heroPlay = document.getElementById('heroPlay');
+      if (heroVideo && heroPlay) {
+        const PLAY_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5.5v13l10.5-6.5z"/></svg>';
+        const PAUSE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6.5" y="5" width="3.6" height="14" rx="1"/><rect x="13.9" y="5" width="3.6" height="14" rx="1"/></svg>';
+        let userPaused = false;
+        const sync = () => {
+          const playing = !heroVideo.paused;
+          heroPlay.innerHTML = playing ? PAUSE_SVG : PLAY_SVG;
+          heroPlay.setAttribute('aria-label', playing ? 'Pause background video' : 'Play background video');
+        };
+        const tryPlay = () => heroVideo.play().catch(() => sync());
+        heroVideo.muted = true;
+        heroVideo.addEventListener('play', sync);
+        heroVideo.addEventListener('pause', sync);
+        heroPlay.addEventListener('click', () => {
+          if (heroVideo.paused) { userPaused = false; tryPlay(); }
+          else { userPaused = true; heroVideo.pause(); }
+        });
+        if (reduceMotion) {
+          heroVideo.removeAttribute('autoplay');
+          heroVideo.pause();
+          userPaused = true;
+        } else {
+          tryPlay();
+          new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (!entry.isIntersecting) heroVideo.pause();
+              else if (!userPaused) tryPlay();
+            });
+          }, { threshold: 0.25 }).observe(heroVideo);
+        }
+        sync();
+        heroPlay.hidden = false;
       }
 
       // ===== Smooth scroll for all anchor links =====
